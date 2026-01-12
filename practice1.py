@@ -1,4 +1,6 @@
-# 1. Print Statements
+# Practice Questions for Day One: 
+
+#  1. Print Statements
 
 # Questions:
 
@@ -10,17 +12,15 @@ print("Hey!!! its me Zeeson")
 print(22)
 
 # c. Print any three sentences using separate print() statements.
-
 print("The time right now is 3:30!")
 print("And Today is December 1!")
 print("Its so coldd")
-
 
 # 2. User Input
 
 # a. Ask the user for their favourite movie and print it.
 
-choice = input("Enter you favourtite movie? ")
+choice = input("Enter your favourtite movie? ")
 print(f"your favourite movie is {choice}")
 
 # b. Ask the user for their city and print:
@@ -29,7 +29,8 @@ print(f"your favourite movie is {choice}")
 choice = input("Enter your city? ")
 print(f"you live in {choice}")
 
-# c. Ask for two words and print them together with a space.
+#  c. Ask for two words and print them together with a space.
+
 name = input("Enter your Name: ")
 age = input("Enter your Age: ")
 
@@ -39,7 +40,6 @@ print(result)
 
 # d. Ask for your hobby and print:
 # My hobby is: <hobby>
-
 
 hobby = input("Enter your hobby: ")
 
@@ -72,7 +72,7 @@ b = "20"
 result = int(a) + int(b)
 print(result)
 
-# 5. Type Checking
+# 5. Type Casting
 
 # a. Print the type of:
 
@@ -86,7 +86,18 @@ print(type("Hello"))
 
 # 3.5
 
-# Take a user input and print what type it is.
+print(type(3.5))
+
+# Take a user input and print what type it is (i.e. int or float or string).
+
+val = input("Enter the number: ")
+if "." in val and val.replace(".","",1).isdigit():
+    val = float(val)
+elif val.isdigit():
+    val = int(val)
+else:
+    pass
+print(type(val))
 
 # 6. Mini Calculator Practice
 
@@ -100,4 +111,17 @@ print(type("Hello"))
 
 # division
 
+num1 = int(input("Enter the first number: "))
+num2 = int(input("Enter the Second Number: "))
+add = num1+num2
+subtract = num1-num2
+multiply = num1*num2
+div = num1/num2
+
+print(f" Result for Addition: {add}\n Result for Subtraction: {subtract}\n Result for Multiplication: {multiply}\n Result for Division: {div}") # used escape sequence here i.e \n for breaking a line.
+
 # Ask for two numbers and print only the average.
+a = float(input("Enter the First Number: "))
+b = float(input("Enter the Second Number: "))
+avg = (a+b)/2
+print(avg)
