@@ -255,11 +255,21 @@ print(extra_info[0])
 print(address)
 
 # Another Instance:
-
 for x, y in [(1, 2), (3, 4)]:
     print(x,y)
-
 
 # Important Rule:
 # If you want to CREATE a tuple, then use commas.
 # If you want to CONVERT an iterable, then use tuple().
+
+# Type Casting: list to tuple and tupleto list
+
+t = (1, 2, 3)
+lst = list(t)
+lst.append(4)
+t2 = tuple(lst)
+print(lst)
+print(t2)
+
+# Convert lists to tuples to lock data.
+# Convert tuples to lists to edit data.
