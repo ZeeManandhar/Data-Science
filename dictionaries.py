@@ -9,7 +9,7 @@ person = {"name":"Zeeson","age": 22,"address":"Koteshwor, Kathmandu-32"}
 print(person)
 print(person["name"])
 
-# here, "name","age" and "äddress" are keys
+# here, "name","age" and "address" are keys
 # "Zeeson", 22 , Koteshwor, Kathmandu-32 are its values respectively.
 
 # Keys are like “labels”. Values are the actual data.
@@ -264,5 +264,171 @@ print(f"The last removed value is: {rem_value}")
 
 fruit_colors.clear()                 # returns empty dictionary
 print(fruit_colors)
+
+
+# 6. Dictionary Methods (CORE)
+
+# There are three core dictionary methods that is:
+# keys()
+# values()
+# items()
+
+
+# 6.1 keys() -> recap
+
+mountains = {
+    'Mount Everest': 8848,
+    'K2': 8611,
+    'Kangchenjunga': 8586,
+    'Lhotse': 8516
+}
+
+x = mountains.keys()
+print(x)
+
+# Shows all keys
+# Used for checking and looping
+
+# 6.2 values() method
+# values() returns all the values in the dictionary.
+
+y = mountains.values()
+print(y)
+
+# When to use values()
+
+# When we don’t care about keys
+# When we want to:
+# calculate
+# count
+# search values
+
+# Example:
+
+if 8848 in mountains.values():
+    print(True)
+else:
+    print(False)
+
+
+# 6.3 items() method (IMPORTANT)
+
+# items() returns both key and value together as pairs.
+
+bike = {
+    "brand": "Giant",
+    "model": "TCR Advanced Pro",
+    "year": 2024,
+    "electric": False
+}
+
+print(bike.items())
+
+# Each item is a tuple: (key, value)
+
+# It allows us to work with key and value at the same time.
+
+# Example:
+
+for key, value in bike.items():
+    print(f"key = {key} , value = {value}")
+
+# 7.) Looping Through Dictionaries:
+
+students = {
+    "John": "A",
+    "Jane": "B",
+    "Doe": "A+"
+}
+
+for i in students:         # This gives Keys only
+    print(i)
+
+# Its same as using keys():
+
+for i in students.keys():
+    print(i)
+
+
+# When accessing values later using the key:
+
+for i in students:         
+    print(f"{i} => {students[i]}")                            # This returns keys with their respective values!
+
+
+# 7.2 Looping through values
+
+for value in students.values():
+    print(value)
+
+# 7.3 Looping through key–value pairs 
+
+for key, value in students.items():
+    print(key, "=>", value)
+
+# This uses tuple unpacking
+
+# Note: dictionaries are not index-based!!
+
+# Using len():
+
+data = {"a": 1, "b": 2, "c": 3}
+print(len(data))
+
+keys = list(data.keys())
+
+for i in range(len(keys)):
+    print(i, keys[i], data[keys[i]])
+
+# 8) Dictionary Comprehension:
+
+# Dictionary comprehension is a compact way to create dictionaries using logic.
+
+# Basic syntax: new_dict = {key: value for item in iterable}
+
+sqr = {i: i**2 for i in range(5)}
+print(sqr)
+
+
+# 8.1 Filtering data (using if)
+
+even_sqr = {i: i**2 for i in range(10) if i%2 == 0}
+print(even_sqr)
+
+
+# 8.2 Tranforming the values
+
+cars = {"Toyota":1500000,"Mercedes":2000000}              # Original Dictionary
+new_cars = {item:price + 200000 for item,price in cars.items()}
+print(new_cars)
+
+
+# 8.3 Converting list to dictionary
+
+num = [1,2,3,4,5,6]
+new_dict = {item: item + 1 for item in num}
+print(new_dict)
+
+
+# 9. Nested Dictionaries:
+
+# a dictionary inside another dictionary
+
+# 9.1 Dictionary inside the dictionary:
+
+students = {
+    "std1":{"name":"Zeeson","Age":22},
+    "std2":{"name":"Sunil","Age":21}
+}
+
+print(students["std1"])
+print(students["std1"]["name"])
+
+
+# 9.2 Looping through nested dictionaries
+
+for std_id,info in students.items():
+    print(f"std_id ={std_id}, Name = {info['name']}, Age = {info['Age']}")
+
 
 
