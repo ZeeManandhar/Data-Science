@@ -176,7 +176,29 @@ print(data)
 # LOGIC-BASED (IMPORTANT) 
 # Write a program to count the frequency of each character in a string.
 
+text = "Zeeson"
+freq = {}
+
+for i in text:
+    freq[i] = freq.get(i,0) + 1
+
+print(freq)
+
 # Write a program to count the frequency of each word in a sentence.
+
+sentence = "python is easy & python is flexible"
+
+split_word = sentence.split()
+
+freq = {}
+
+for i in split_word:
+    if i in freq:
+        freq[i] = freq[i] + 1
+    else:
+        freq[i] = 1
+
+print(freq)
 
 # Write a program to find the key with the maximum value in a dictionary.
 
@@ -276,20 +298,106 @@ print(new_dict)
 
 # Write a program to store student details (name, age, marks) using a nested dictionary.
 
+students = {
+    "std_1": {"Name":"Zeeson","age":22,"marks":"A+"},
+    "std_2":{"Name":"Sunil","age":21,"marks":"A"}
+}
+
+print(students)
+
+
 # Write a program to access and print the marks of a specific student.
+
+print(students["std_1"]["marks"])
 
 # Write a program to loop through all students and print their details.
 
+for key, value in students.items():
+    print(key, value)
+
 # Write a program to simulate a simple login system using a dictionary.
+
+
+input1 = input("Enter your Username: ")
+input2 = input("Enter your Password: ")
+
+usernames = {
+    "ZeesonMdr":"zeeson123#",
+    "Salmankhan1" :"salman123#"
+}
+
+if input1 in usernames:
+    pass
+    if input2 == usernames[input1]:
+        print("Sucessfull Login")
+    else:
+        print("Unsucessfull Login")
+else:
+    print("Username not Found!")
+
 
 # Write a program to count how many times each element appears in a list using a dictionary.
 
+nums = [1, 2, 2, 3, 1, 4, 2]
+empty_dict = {}
+
+for i in nums:
+    if i in empty_dict:
+        empty_dict[i] = empty_dict[i] + 1
+    else:
+        empty_dict[i] = 1
+
+print(empty_dict)
+
 # Write a program to create a dictionary that stores even numbers as keys and their squares as values.
+
+data_1 = {i:i**2 for i in range(1,21) if i%2 == 0}
+print(data_1)
 
 # Write a program to convert a list of tuples into a dictionary.
 
+l1 = [(1,2),(3,4),(5,6)]
+
+dict_1 = {}
+for x,y in l1:
+    dict_1[x] = y
+
+print(dict_1)
+
+
 # Write a program to check whether two dictionaries are equal or not.
+
+data1 = {
+    "Name": "Zeeson",
+    "Age":22
+}
+data2 = {
+    "Name": "Sunil",
+    "Age": 21
+}
+
+if len(data1) == len(data2):
+    print("Two dictionaries are equal")
+else:
+    print("Not Equal")
+
 
 # Write a program to create a dictionary comprehension that filters values greater than 10.
 
+l1 = [5,8,10,15,20,2]
+data = {i : i for i in l1 if i > 10}
+
+print(data)
+
 # Write a program to build a frequency dictionary for the string "mississippi".
+
+txt = "mississippi"
+
+freq = {}
+
+for i in txt:
+    if i in freq:
+        freq[i] = freq[i] + 1
+    else:
+        freq[i] = 1
+print(freq)
