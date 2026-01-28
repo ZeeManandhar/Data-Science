@@ -145,3 +145,157 @@ if password == "admin@123":
     print("Login Sucessfull")
 else:
     print("Invalid Credential")
+
+
+# 4) if–elif–else Chain (Multiple Conditions)
+
+# Sometimes there are more than two possibilities
+
+# Example:
+# Marks can be A, B, C, or Fail
+# Traffic light can be Red, Yellow, or Green
+# Menu choice can be 1, 2, 3, or Exit
+
+# Syntax of if–elif–else:
+
+# if condition_1:
+#     code
+# elif condition_2:
+#     code
+# elif condition_3:
+#     code
+# else:
+#     code
+
+# Rules:
+# if : must come first
+# elif : can be many
+# else : optional, only one, always last
+
+# Example 1:
+
+choice = int(input("Enter the option to choose: "))
+
+if choice == 1:
+    print("Burger")
+elif choice == 2:
+    print("MOMO")
+elif choice == 3:
+    print("Pizza")
+else:
+    print("Option not Found!")
+
+
+# Example 2: 
+
+marks = 72
+
+if marks >= 80:
+    print("Grade A")
+elif marks >= 60:
+    print("Grade B")
+elif marks >= 40:
+    print("Grade C")
+else:
+    print("Fail")
+
+# 5) Membership Conditions — using in
+
+# A membership condition checks whether something exists inside something else.
+
+# It returns:
+
+# True → item exists
+# False → item does not exist
+
+# in with a list
+
+names = ["Zeeson","Dalli","Kaley"]
+
+print("Kaley" in names)
+
+if "Zeeson" in names:
+    print("Item Available!")
+else:
+    print("Not Available!")
+
+# in with a string
+
+str1 = "I am a Developer!"
+
+print("Developer" in str1)
+print("Python" in str1)
+
+if "@" in "admin@gmail.com":
+    print(True)
+
+
+# in with a dictionary
+
+# Rule: in checks keys, not values (For Example)
+
+students = {
+    "Name" : "Ram Bahadur",
+    "Age": 25,
+    "Address": "Koteshwor"
+}
+
+if "Name" in students:
+    print("Found!")
+else:
+    print("Not Found!")
+
+# To check if the value exists or not:
+
+if "Ram Bahadur" in students.values():
+    print("FOUND")
+else:
+    print("NOT FOUND!")
+
+# Quick Practice:
+
+# to check if username exists:
+
+username = input("Enter your Username: ")
+
+users = ["admin123","Zeesondon1","Dallibhuntu1"]
+
+if username in users:
+    print("User Found!")
+else:
+    print("User not Found!")
+
+# 6) Logical Operators — and, or, not
+
+# Logical operators are used to combine conditions.
+# They always work with True / False.
+
+# and Operator:
+
+# Both conditions must be True
+age = 10
+
+if (age >= 18 and age <= 60):
+    print("Can Proceed!")
+else:
+    print("Cannot Proceed!")
+
+# or operator:
+# At least one condition must be True
+
+day = input("Enter the day: ")
+
+if day == "Saturday" or day == "Sunday":
+    print("Holiday!")
+else:
+    print("Not Holiday!")
+
+
+# not operator
+
+# Reverses the result
+
+is_active = False
+
+if not is_active:
+    print("Please Proceed")
