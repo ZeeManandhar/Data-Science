@@ -363,3 +363,4 @@ match operation:
 
 # Example:
 
+day = inp
