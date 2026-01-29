@@ -299,3 +299,67 @@ is_active = False
 
 if not is_active:
     print("Please Proceed")
+
+
+# 7) Python match Statement (Switch Case)
+
+# It is used when you want to compare one value against many fixed options.
+
+# Before match, we used long if–elif–else chains.
+
+# Basic syntax of match:
+
+# match variable:
+#     case value1:
+#         code
+#     case value2:
+#         code
+#     case _:
+#         code
+
+# match compares values, not conditions
+# Cannot use >, <, and, or directly
+# Cleaner for menus and options
+
+
+# Example 1:
+
+choice = 3
+
+match choice:
+    case 1:
+        print("Add the item")
+    case 2:
+        print("View the Item")
+    case 3: 
+        print("Update the Item")
+    case 4:
+        print("Delete the Item")
+    case 5:
+        print("Exit")
+    case __:
+        print("Invalid Choice!")
+
+# Example: Simple Calculator System:
+
+operation = input(
+    "Choose the operation: + for Addition, - for Subtraction, * for Multiplication and / for Division: "
+)
+
+num1 = int(input("Enter the First Number: "))
+num2 = int(input("Enter the Second Number Please: "))
+
+match operation:
+    case "+":
+        print(num1 + num2)
+    case "-":
+        print(num1 - num2)
+    case "*":
+        print(num1 * num2)
+    case "/":
+        print(num1 / num2)
+    case _:
+        print("Invalid Operation!")
+
+# Example:
+
