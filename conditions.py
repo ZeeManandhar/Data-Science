@@ -363,4 +363,78 @@ match operation:
 
 # Example:
 
-day = inp
+day = input("Enter the Day Please: ")
+
+match day:
+    case "Monday" | "Tuesday" | "Wednesday" | "Thursday" |"Friday":
+        print("Working Days!")
+    case "Sunday" | "Saturday":
+        print("Weekend")
+    case _:
+        print(f"{day} not found!")
+
+# Match can handle more than one value.
+# also called tuple pattern matching.
+# wrap values in parentheses.
+
+# Syntax:
+
+# match (value1, value2):
+#     case (pattern1, pattern2):
+#         ...
+
+day = "sat"
+choice = 1
+
+match day, choice:
+    case ("sat", 1):
+        print("Saturday + Option 1")
+    case ("sun", 1):
+        print("Sunday + Option 1")
+    case ("mon", 2):
+        print("Monday + Option 2")
+    case _:
+        print("No match")
+
+
+# Core difference (one sentence)
+
+# if–elif–else : used for conditions and logic
+# match : used for matching fixed values / patterns
+
+# Section 9) Nested if Statements (Decision Inside Decision):
+
+# A nested if means:
+# An if statement written inside another if or else block
+
+# Basic structure
+# if condition_1:
+#     if condition_2:
+#         code
+
+# The outer block runs first, and only the inside block!
+
+# Example:
+age = 18
+has_citizenship = True
+
+if age >= 18:
+    if has_citizenship is True:
+        print("can vote in election!")
+    else:
+        print("cannot vote!")
+else:
+    print("Error")
+
+
+# Example:
+
+num = int(input("Enter the number please: "))
+
+if num > 0:
+    if num == 0:
+        print("Zero")
+    else:
+        print("Positive Number")
+else:
+    print("The Number is Negative")
