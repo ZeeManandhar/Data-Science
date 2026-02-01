@@ -238,7 +238,175 @@ for i in range(-1, -6, -1):
 # start < stop  ----> returns empty or nothing
 
 
-# 5. for Loop with Dictionary
+# 5.) for Loop with Dictionary
 
 # A dictionary is also iterable, but it works slightly differently than lists and strings.
+
+# Example:
+
+student = {
+    "Name": "Zeeson Manandhar",
+    "Age" : 22,
+    "Program": "Bsc.IT"
+}
+
+# 5.1) looping over Keys in Dictionary (Default Behaviour)
+
+for key in student:
+    print(key)
+
+# This returns only the keys of dicitonary.
+
+# Plain rule: for x in dict: --> loops over keys.
+
+# 5.2) Looping over Values
+
+for value in student.values():
+    print(value)
+
+# This gives values only.
+
+# 5.3) Looping over both key and value
+
+for key, value in student.items():
+    print(f"{key} = {value}")
+
+# .items() gives pairs (key, value)
+# Two variables are needed  
+
+# 6.) while Loop Basics
+
+# A while loop repeats as long as a condition is True.
+
+# Basic syntax:
+
+# while condition:
+#     statement
+
+# Explanation:
+
+# Check the condition
+# If True, run the indented code.
+# Go back and check again.
+# Stop when condition becomes False.
+
+# Example:
+
+count = 1
+
+while count <= 3:
+    print(f"{count} Execution!")
+    count += 1
+
+# Explanation:
+# Check the condition
+# If True, run the indented code
+# Go back and check again
+# Stop when condition becomes False
+
+
+# Infinite Loop Example with Count:
+
+# count = 1
+
+# while count <= 3:
+#     print(count)
+
+# This gives infinite loop because the count value remains 1 and condition stays True i.e. 1 <= 3. Thus, the loop runs indefinately.
+
+# Infinite Loop Concept: 
+
+user = input("Enter your Name please: ").strip()
+
+while True:
+    print(f"Welcome {user}!")
+    break
+    
+# This loop:
+# Has no stopping condition
+# Runs forever unless stopped using break
+
+# break immediately stops a loop, even if the condition is still True.
+
+
+# 7.) Input-Driven while Loop
+
+# This is one of the most important real-world loop patterns.
+
+# 1) The idea (plain words)
+
+# If We want to:
+# Keep asking the user for input
+# Stop only when the user types "exit"
+# This is why while is perfect.
+
+# while True:
+#     name = input("Type Something: ")
+#     print(name)
+
+# The loop never ends!
+
+# using break to terminate the loop
+
+while True:
+    text = input("Type Something: ").strip().lower()
+    print(text)
+
+    if text == "exit":
+        break
+
+# 8.) Loop Controls
+
+# 8.1) continue — skip this iteration
+
+# Skips the current iteration
+# Goes directly to the next iteration
+# Loop itself does not stop
+
+# Example 1 (using while loop):
+
+x = 0
+while x < 5:
+    x = x + 1
+    if x == 3:
+        continue
+    print(x)
+
+# Example 2 (using for loop):
+
+for x in [1, 2, 3, 4]:
+    if x == 2:
+        continue
+    print(x)
+
+
+# 8.2) Pass -- do nothing (placeholder)
+
+# Does nothing
+# Used when syntax requires a statement
+# Often used as a placeholder
+
+
+# Example (using for loop):
+
+for x in [1, 2, 3]:
+    if x == 2:
+        pass
+    print(x)
+
+
+# Example (using while loop):
+num = 0
+
+while num < 7:
+    if num == 2:
+        pass
+    print(num)
+    num += 1
+
+# 8.3 Comparison between all the Loop Controls:
+
+# break	--->Exit loop completely
+# continue ----> Skip current iteration
+# pass ----> Do nothing
 
