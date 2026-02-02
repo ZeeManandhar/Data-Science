@@ -410,3 +410,105 @@ while num < 7:
 # continue ----> Skip current iteration
 # pass ----> Do nothing
 
+# 9.) Loops and Conditions Core
+
+# 9.1 Print only even numbers:
+
+nums = [1,2,3,4,5,6,7,8,9,10]
+
+for i in nums:
+    if i%2 == 0:
+        print(i)
+
+# 9.2 Count positives and negatives:
+
+nums = [-2,1,2,3,6,-9,-8,-7,-10]
+
+neg_num = 0
+pos_num = 0
+
+for n in nums:
+    if n>0:
+        pos_num += 1
+    else:
+        neg_num += 1
+
+print(f"Total Positive Numbers = {pos_num}")
+print(f"Total Negative Numbers = {neg_num}")
+
+# 9.3 Validation inside a loop (input keeps asking)
+
+# keep asking until user enters a number between 1 and 5.
+
+x = []
+while True:
+    num = int(input("Enter the Number = "))
+    if num > 1 and num < 5:
+        print("Valid!")
+        break
+    else:
+        x.append(num)
+        print("Try Different Number Please!")
+
+print(f"Wrong inputs entered: {x}")
+
+
+# 10 — Mini Project : Menu-Driven To-Do List 
+
+tasks = []
+
+while True:
+    print("\n1. Add Tasks")
+    print("2. View Tasks")
+    print("3. Remove Tasks")
+    print("4. Exit")
+
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        task = input("Enter the item to add: ").strip()
+        tasks.append(task)
+        print("Task Added!")
+
+    elif choice == 2:
+        if not tasks:
+            print("No Tasks To View!")
+        else:
+            for i in range(len(tasks)):
+                print(f"{i+1}.) {tasks[i]}")
+
+    elif choice == 3:
+        if not tasks:
+            print("No Items to Delete!")
+        else:
+            for i in range(len(tasks)):
+                print(f"{i+1}.) {tasks[i]}")
+
+            print("Enter 1 to clear all, 2 to remove one item")
+            rem_input = int(input("Please Enter your choice: "))
+
+            if rem_input == 1:
+                tasks.clear()
+                print("All tasks cleared!")
+
+            elif rem_input == 2:
+                num = int(input("Enter the Number to Remove: "))
+                if num >= 1 and num <= len(tasks):
+                    tasks.pop(num - 1)
+                    print("Task Removed Successfully!")
+                else:
+                    print("Invalid task number!")
+
+            else:
+                print("Invalid delete option!")
+
+    elif choice == 4:
+        print("Exiting...!")
+        break
+
+    else:
+        print("Invalid Option!")
+
+
+
+
