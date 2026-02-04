@@ -1,6 +1,6 @@
 # Loops Pratice Questions:
 
-# BASIC LEVEL (1–15):
+# BASIC LEVEL:
 
 # Write a program to print numbers from 1 to 10 using a for loop.
 
@@ -107,7 +107,7 @@ while i <= 5:
     print("Hello")
     
 
-# INTERMEDIATE LEVEL (16–30)
+# INTERMEDIATE LEVEL 
 
 # Write a program to find the sum of all numbers in a list.
 
@@ -281,25 +281,203 @@ while True:
         print("Try Again! Invalid Number")
 
 
-# LOGICAL / REAL-WORLD LEVEL (31–40)
+# LOGICAL / REAL-WORLD LEVEL 
 
 # Write a program to check if a number exists in a list using a loop.
 
+num = 5
+l1 = [1,2,3,4,5,6,7,8,9,10,11]
+
+for i in l1:
+    if num == i:
+        print("The Number Exist!!")
+  
 # Write a program to remove all negative numbers from a list using a loop.
+
+l1 = [-5,1,2,3,-4,-6,10]
+l2 = []
+
+for i in l1:
+    if i > 0:
+        l2.append(i)
+
+print(f"List with No Negative Numbers : {l2}")
 
 # Write a program to print duplicate elements from a list.
 
+num = ["Zeeson","Sunil","Aman","Zeeson","Bella","Bella"]
+
+list_1 = []
+
+for i in num:
+    count = 0
+    for j in num:
+        if i == j:
+            count = count + 1
+
+    if count > 1 and i not in list_1:
+        list_1.append(i)
+
+print(f"Duplicate Elements are: {list_1}")
+
 # Write a program to count the frequency of each element in a list.
+
+elements = ["apple", "banana", "apple", "orange", "banana", "apple"]
+
+freq = {}
+
+for item in elements:
+    if item in freq:
+        freq[item] = freq[item] + 1
+    else:
+        freq[item] = 1
+print(freq)
 
 # Write a program to simulate a login system (3 attempts max).
 
+credentials = {
+    "admin1": "admin@123",
+    "ZeesonGroot": "Zee123#"
+}
+
+count = 0
+
+while count < 3:
+    username = input("Enter Username: ").strip()
+    password = input("Enter Password: ").strip()
+
+    if username in credentials and credentials[username] == password:
+        print("Login Successful!")
+        break
+    else:
+        count += 1
+        print(f"Invalid Credentials. Attempts left: {3 - count}")
+
+if count == 3:
+    print("Account locked. Too many failed attempts.")
+
+
 # Write a program to display a menu repeatedly until user exits.
+
+while True:
+    print("\nMenu:")
+    print("1. Option 1")
+    print("2. Option 2")
+    print("3. Exit")
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        print("You selected Option 1.")
+    elif choice == "2":
+        print("You selected Option 2.")
+    elif choice == "3":
+        print("Exiting the program.")
+        break
+    else:
+        print("Invalid choice. Please try again.")
+
 
 # Write a program to build a simple calculator using a loop and menu.
 
+while True:
+    data1 = int(input("Choose 1 for Addition, 2 for Subtraction, 3 for Multiplication, 4 for Division and 5 to Exit: "))
+    input1 = int(input("Enter First Number: ")) 
+    input2 = int(input("Enter Second Number: ")) 
+
+    match data1:
+        case 1:
+            sum = input1 + input2
+            print(f"Addition of {input1} and {input2} is {sum}")
+        case 2:
+            subtract = input1 - input2
+            print(f"Subtraction of {input1} and {input2} is {subtract}")
+        case 3:
+            multiply = input1 * input2
+            print(f"Multiplication of {input1} and {input2} is {multiply}")
+        case 4:
+            division = 0
+            if input2 != 0:
+                division = input1 / input2
+                print(f"Division of {input1} and {input2} is {division}")
+            else:
+                print("Error: Division by zero is not allowed.")
+        case 5:
+            print("Exiting the Calculator!")
+            break
+        case _:
+            print("Invalid choice. Please try again.")
+            
+
+
 # Write a program to keep adding numbers until user types "done", then print the sum.
 
-# Write a program to build a menu-driven number list manager
-#   (add / view / remove / exit).
+total = 0
+while True:
+    choice = input("Choose the option: type 'add' to add numbers, type 'done' to exit:").strip().lower()
+
+    if choice == "add":
+        
+        data = int(input("Enter the Number to add: "))
+        total = total + data
+
+    elif choice == "done":
+        break
+    else:
+        print("Error!!")
+
+print(f"total sum is {total}")
 
 # Write a program to build a menu-driven To-Do List using loops and conditions.
+todo_list = []
+while True:
+    print("\nTo-Do List Menu:")
+    print("1. Add Task")                                            
+    print("2. View Tasks")
+    print("3. Remove Task")
+    print("4. Exit")
+
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        task = input("Enter the task to add: ").strip()
+        todo_list.append(task)
+        print("Task Added!")
+
+    elif choice == 2:
+        if not todo_list:
+            print("No tasks in the list.")
+        else:
+            for i in range(len(todo_list)):
+                print(f"{i + 1}. {todo_list[i]}")
+
+    elif choice == 3:
+        if not todo_list:
+            print("No tasks to remove.")
+        else:
+            for i in range(len(todo_list)):
+                print(f"{i + 1}. {todo_list[i]}")
+            if todo_list:
+                num = int(input("Enter the number of the task to remove: "))
+                if 1 <= num <= len(todo_list):
+                    todo_list.pop(num - 1)
+                    print("Task removed successfully!")
+                else:
+                    print("Invalid task number.")
+
+    elif choice == 4:
+        print("Exiting To-Do List application.")
+        break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
