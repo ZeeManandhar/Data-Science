@@ -406,5 +406,164 @@ demo1(2,4,5,6,b=7)
 
 # 10. Keywords Arguments (**kwargs)
 
+# since, we know *args handles positional arguments. 
+# But what if we want to pass:
+# named values
+# key–value pairs
+# unknown number of keyword arguments?
+
+# **kwargs allows a function to accept any number of keyword arguments.
+
+# Example:
+
+def student(**values):
+    return values
+
+result = student(name = "Zeeson Manandhar", age = 22, address = "Koteshwor,KTM - 32")
+print(result)
+
+# Kwargs resolves in dictionary.
+
+def check(**data):
+    return data
+
+output = check(a = 1, b = 2)
+print(type(output))
+
+# **kwargs packs keyword arguments into a dictionary.
+
+def bike_specs(name = "Ns200",**values):
+    return name , values
+
+result = bike_specs(brand = "Bajaj", made = 2012, cc = 200)
+print(result)
+
+# 10.1) Accessing values from **kwargs:
+
+def flowers(**values):
+    return values
+
+result = flowers(red = "rose",white = "lily", yellow =  "sunflower", purple = "lavender")
+print(result["red"])
+print(result["purple"])
+
+# 10.2) Looping over **kwargs:
+
+# since, it is dictionary, we must use keys.
+
+def mountains(**height):
+    for key,value in height.items():
+        print(f"key = {key}, value = {value}")
+
+mountains(Everest=8848, k2 = 8611, Lhotse = 8516 )
+
+
+# 11.) Combining *args and **kwargs Together
+
+# Some functions need to accept:
+# any number of positional arguments
+# any number of keyword arguments
+
+# 11.1) Correct Order to Follow When combining both *args and ** kwargs:
+
+# The only valid order is:
+
+# normal parameters -----> *args --------> **kwargs
+
+def demo(a, *args, **kwargs):
+    print("a = ", a)
+    print("args = ", args)
+    print("kwargs = ", kwargs)
+
+demo(1,2,3,4,5,6, x = 7, y = 8)
+
+# 11.2) Mistakes to Avoid:
+
+# def test(**kwargs, *args):      # Wrong Order
+
+# Positional argument after keyword:
+# show(name="Ram", 5)
+
+
+# Note:
+# *args collects extra positional arguments,
+# **kwargs collects extra keyword arguments. 
+
+# 12. Lambda Functions:       
+#
+# A lambda function is a small, anonymous (nameless) function written in one line.      
+
+# Normal Function Example:
+
+def add(a, b):
+    return a + b
+
+# Using Same Logic with Lambda function:
+ 
+add = lambda a,b: a+b
+print(add(5,6))
+
+# 12.1) Basic lambda syntax:
+
+# lambda parameters : expressions
+
+# 12.2) Important rules of lambda
+
+# A lambda function:
+# Has no name (unless we assign it)
+# Can have any number of arguments
+# Can have ONLY ONE expression
+# Automatically returns the result
+
+# Cannot contain:
+# loops
+# multiple statements
+# return keyword
+
+# Example Two:
+
+square = lambda x : x**2
+print(square(2))
+
+# 12.3) When to use lambda 
+
+# Use lambda when: 
+# Logic is very small 
+# Used once 
+# Passed to another function (like map, filter)
+
+# 12.4) When NOT to use lambda
+
+# Do NOT use lambda when:
+# Logic is complex
+# Multiple steps are needed
+# Readability matters
+
+
+# 12.5) Immediate Invocation (printing the result without using variable in lambda function)
+
+# We wrap the lambda in parentheses and call it:
+
+print((lambda x,y:x*y)(2,3))
+
+# Step-to-Step Walkthrough:
+
+# (lambda x,y:x*y) ---> This creates the Function
+# (2,3) -------> This calls the function
+# Result 6 is returned automatically.
+# Print() displays it
+
+
+# Next Example:
+(lambda : print("Hello User!"))()
+
+# same logic using variable:
+
+say_hello = lambda: print("Hello")
+say_hello()
+
+# More Alternative Ways to do it:
+
+(lambda name: print(name))(name="hello zeeson")
 
 
