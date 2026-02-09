@@ -563,7 +563,261 @@ say_hello = lambda: print("Hello")
 say_hello()
 
 # More Alternative Ways to do it:
-
 (lambda name: print(name))(name="hello zeeson")
 
+# 13.) Map() Function:
+
+# map():
+# takes a function
+# takes an iterable (like list)
+# applies the function to each element
+# returns a map object
+
+# BASIC SYNTAX FORM: map(function, iterable)
+
+
+# Example Without Map():
+
+num1 = [2,4,6,8,10]
+sqr = []
+
+for n in num1:
+    output = n**2
+    sqr.append(output)
+
+print(sqr)
+
+# Same Logic Using Map() Function:
+
+def square(x):
+    return x**2
+
+num = [2,4,6,8,10]
+result = map(square, num)
+
+print(list(result))             # map returns map object, so we use list
+
+
+# Same Example using lambda Function 
+
+num = [2,4,6,8,10]
+
+output = map(lambda x: x**2, num)
+print(list(output))
+
+# Note: Map() is cleaner for small logic.
+
+# To Understand:  map() applies a function to every element of an iterable.
+
+# 14.) reduce() Function:
+
+# reduce():
+# takes a function
+# takes an iterable
+# applies the function cumulatively
+# returns one final value
+
+# Examples:
+# sum of numbers
+# product of numbers
+# maximum value
+# cumulative result
+
+
+# reduce() is not built-in by default.
+# We must import it.
+
+from functools import reduce
+
+# Basic Form of Reduce(): reduce(function, iterable)
+
+# Simple Example without using reduce():
+
+number = [2,4,6,8]
+
+sum = 0
+for i in number:
+    sum = sum + i
+print(sum)
+
+# Same Logic using Reduce: 
+
+number = [2,4,6,8]
+
+result = reduce(lambda a,b: a + b, number)
+print(result)
+
+# using def function:
+
+def add(a,b):
+    result = a + b
+    return result
+
+number = [2,4,6,8]
+
+output = reduce(add, number)
+print(output)
+
+# a always stores the accumulated result  (Accumulated value = total so far)
+# b always takes the next list value
+
+# Most Important Rule To Keep in Mind: reduce() always works with TWO values at a time e.g. x,y.
+
+
+# 15.) Zip function
+
+# Sometimes you have multiple lists and you want to:
+# combine them element by element
+# treat corresponding items together
+
+# zip():
+# takes two or more iterables
+# pairs elements by position
+# returns a zip object
+
+# Example:
+
+# names = ["Ram", "Sita", "Hari"]
+# ages  = [20, 22, 25]
+
+# zip returns this as:
+
+# Basix Form of Zip(): zip(iterable1, iterable2, ...)
+
+# Simple Example:
+
+std = ["Zeeson","Sunil","Niraj","Aman"]
+age = [22,21,23,23]
+
+result = zip(std,age)
+print(list(result))
+
+# 15.1) What Zip Function Does Internally?
+
+# zip() pairs elements one by one:
+
+# 1st pair --> (names[0], ages[0])
+# 2nd pair ---> (names[1], ages[1])
+# 3rd pair ----> (names[2], ages[2])
+
+# Index-based pairing
+
+# 15.2) What if Lists are of Different Lengths?
+
+# zip() stops at the shortest list.
+
+# Example:
+a = [1,2,3,4,5,6]
+b = [7,8,9]
+
+data = zip(a,b)
+print(list(data))
+
+# Remaining elements are ignored.
+
+# 15.3) Looping over Zip()
+
+names = ["Steph","Lebron","Giannis","Victor"]
+age = [38,41,29,23]
+
+for name, age in zip(names,age):
+    print(f"{name} --> {age}")
+
+
+# 15.4 Zipping more than two lists
+
+ids = [1, 2, 3]
+names = ["Ram", "Sita", "Hari"]
+cities = ["KTM", "PKR", "BKT"]
+
+print(list(zip(ids, names, cities)))
+
+# To Memorize: zip() combines multiple iterables element-wise into tuples.
+
+# 16.) When to use what?
+
+# 16.1 Normal Function (def) vs Lambda
+
+# Use normal function (def) when:
+# Logic is more than 1 line
+# want readability
+# will reuse the function
+# building real programs
+
+# Example:
+
+def calculate_total(prices):
+    total = 0
+    for p in prices:
+        total += p
+    return total
+
+# Use lambda when:
+
+# Logic is very small
+# One-line expression
+# Used once
+# Passed into another function
+
+# Example:
+
+list(map(lambda x: x * 2, [1, 2, 3]))
+
+# Mini-Project Practice:
+
+# Practice one: Menu-driven calculator
+
+def addition(a,b):
+    return a + b
+
+def subtraction(a,b):
+    return a - b
+
+def multiplication(a,b):
+    return a * b
+
+def division(a,b):
+    if b == 0:
+        return "Cannot be Divided by 0"
+    else:
+        return a/b
+    
+def calculator(choice,a,b):
+    if choice == 1:
+        return addition(a,b)
+    elif choice == 2:
+        return subtraction(a,b)
+    elif choice == 3:
+        return multiplication(a,b)
+    elif choice == 4:
+        return division(a,b)
+    else:
+        return "Invalid Option!"
+    
+result = calculator(4,10,5)
+print(result)
+
+# Here, we used to the concept of functional delegation.
+
+# Functional delegation means:
+# One function does not perform all the work by itself.
+# Instead, it delegates (hands over) specific tasks to other functions.
+
+# Functional Delegation: One function assigns parts of its work to other functions.
+                                 
+# Practice Two: Login System Using Functions
+
+credentials = {
+    "ZeeGroot":"Zeeson123#",
+    "Dalli1":"Dalli123#"
+}
+
+def login(username,password):
+    if username in credentials and credentials[username] == password:
+        return "Login Sucessfull!"
+    else:
+        return "Invalid Credentials!"
+
+result = login("ZeeGroot","Zeeson123#")
+print(result)
 
