@@ -148,33 +148,197 @@ range_num(25)
 
 # Write a program using a function to return the sum of all elements in a list.
 
+def sum_all(values):
+    sum = 0
+    for i in values:
+        sum += i
+    return sum
+    
+result = sum_all([1,2,3,4,5])
+print(result)
+
+# Note: Global variables should be used for reading only. (variable outside the function)
+# Local variables should be used for modification. (varaible inside the function)
+
+
 # Write a program using a function to count vowels in a string.
+
+def count_vowels(str1):
+    count = 0
+    for i in str1:
+        if i == "a" or i == "e" or i == "i" or i == "o" or i == "u":
+            count = count + 1
+    return count
+
+result = count_vowels("zeeson")
+print(f"The Total Number of Vowels in the String is {result}.")
 
 # Write a program using a function to reverse a string.
 
+def rev_str(str2):
+    x = str2[::-1]
+    return x
+
+output = rev_str("Basketball")
+print(output)
+
 # Write a program using a function to check whether a string is a palindrome.
+
+def palindrome(str3):
+    if str3 == str3[::-1]:
+        return "The String is Palindrome!"
+    else:
+        return "Not Palindrome String!"
+    
+output = palindrome("abba")
+print(output)
+
+print(palindrome("Hello"))
 
 # Write a program using a function to calculate factorial of a number.
 
+def factorial_num(number):
+    fact_num = number
+    for i in range(number-1,0,-1):
+        fact_num = fact_num*i
+    return fact_num
+
+result = factorial_num(5)
+print(result)
+
 # Write a program using a function to generate Fibonacci series up to N terms.
+
+def fibonacci(n):
+    if n <= 0:
+        return []
+
+    if n == 1:
+        return [0]
+
+    series = [0, 1]
+
+    for i in range(n - 2):
+        next_num = series[-1] + series[-2]
+        series.append(next_num)
+
+    return series
+
+result = fibonacci(10)
+print(result)
 
 # Write a program using a function to check whether a number is prime.
 
+def prime(number):
+    if number <= 1:
+        print("Not a prime number")
+        return
+
+    for i in range(2, number):
+        if number % i == 0:
+            print("Not Prime Number!")
+            return
+
+    print("Prime Number!")
+
+prime(8)
+prime(5)
+
 # Write a program using a function with a default parameter to calculate power of a number.
+
+def power(exponent=2,base=2):
+    return base**exponent
+
+result = power(3)
+print(result)
+
 
 # Write a program using a function to return the largest element in a list.
 
+
+def largest_num(l1):
+    large_number = l1[0]
+
+    for i in l1:
+        if i > large_number:
+            large_number = i
+    return large_number
+
+result = largest_num([1,2,99,5,6,3,9])
+print(result)
+
 # Write a program using a function to return the smallest element in a list.
+
+
+def smallest_num(l2):
+    small_number = l2[0]
+
+    for n in l2:
+        if n < small_number:
+            small_number = n
+    return small_number
+
+output = smallest_num([2,5,6,1,9,7])
+print(output)
 
 # Write a program using a function to count how many times an element appears in a list.
 
+def count_element(l1,target):
+    count = 0
+    for i in l1:
+        if i == target:
+            count = count + 1
+    return count
+
+output = count_element([1,0,2,3,6,6,6,6,5,5,9],6)
+print(output)
+
 # Write a program using a function to remove duplicates from a list.
+
+def rem_duplicate(l1):
+    emp_list = []
+
+    for i in l1:
+        if i not in emp_list:
+            emp_list.append(i)
+    return emp_list
+
+result = rem_duplicate([1,2,2,2,2,3,3,3,3,4])
+print(result)
 
 # Write a program using a function to merge two lists.
 
+def merge_list(l1,l2):
+    set1 = set(l1)
+    set2 = set(l2)
+    merge_set = set1.union(set2)
+    new_list = list(merge_set)
+    return new_list
+
+result = merge_list([1,2,3,4,5,6],[4,5,6,7,8,9])
+print(result)
+
+
 # Write a program using a function to sort a list in ascending order.
 
+def sort_list(l1):
+    l1.sort(reverse=False)
+    return l1
+    
+print(sort_list(['A','C','D','B','E']))
+
+
 # Write a program using a function to return only even numbers from a list.
+
+def even_num(l1):
+    even_list = []
+    for i in l1:
+        if i%2 == 0:
+            even_list.append(i)
+    return even_list
+
+output = even_num([1,2,3,4,5,6,7,8,9])
+print(output)
+
 
 # ADVANCED LEVEL — *args, **kwargs, lambda, map, reduce, zip:
 
