@@ -344,33 +344,130 @@ print(output)
 
 # Write a program using a function with *args to calculate sum of any number of values.
 
+def sum_num(*values):
+    total = 0
+    for i in values:
+        total = total + i
+    return total
+
+print(sum_num(10,20,30,40,50))
+
 # Write a program using a function with *args to find the maximum value.
+
+def max_value(*values):
+    max_val = max(values)
+    return max_val
+
+print(max_value(5,6,101,99,6,88,3))
 
 # Write a program using a function with **kwargs to display student details.
 
+def std_details(**details):
+    return details
+
+print(std_details(name = "Zeeson Manandhar",age = 22, program = "Bsc.IT"))
+
+
 # Write a program using a function with **kwargs to count how many key-value pairs are passed.
+
+def count_pairs(**kwargs):
+    count = 0
+    for key,value in kwargs.items():
+        count = count + 1
+    return count
+
+result = count_pairs(name = "Zeeson Manandhar",age = 22, program = "Bsc.IT", grade = "First Class Honours")
+print(result)
+
 
 # Write a program using a function that uses both *args and **kwargs.
 
+def demo(*args,**kwargs):
+    return args,kwargs
+
+output = demo(1,2,3,4, a = 1, b = 2, c = 3)
+print(output)
+
+
 # Write a program using a lambda function to add two numbers.
+
+add_num = lambda a,b: a+b
+print(add_num(5,6))
+
 
 # Write a program using a lambda function to find square of a number.
 
+sqr_number = lambda x : x**2
+print(sqr_number(9))
+
 # Write a program using map() to double all elements in a list.
+
+def double(x):
+    return x+x
+
+list_1 = [1,2,3,4,5,6]
+data = map(double, list_1)
+print(list(data))
 
 # Write a program using map() to convert a list of strings to uppercase.
 
+def str_uppercase(str1):
+    x = str1.upper()
+    return x
+
+l1 = ["zeeson","dalli","kaley","bella","tony"]
+result = map(str_uppercase, l1)
+print(list(result))
+
 # Write a program using reduce() to find the sum of elements in a list.
+
+from functools import reduce
+
+def sum_elements(x,y):
+    sum = x + y
+    return sum
+
+l1 = [3,6,9,12,15]
+
+result = reduce(sum_elements, l1)
+print(result)
 
 # Write a program using reduce() to find the product of elements in a list.
 
+def product_elements(a,b):
+    product = a * b
+    return product
+
+l1 = [4,8,12,16,20]
+
+final = reduce(product_elements, l1)
+print(final)
+
+
 # Write a program using zip() to combine two lists into a list of tuples.
+
+l1 = ["Zeeson","Sunil","Aman","Dalli","Reyhansh"]
+l2 = [22,21,25,4,6]
+
+result = zip(l1,l2)
+print(tuple(result))
 
 # Write a program using zip() to create a dictionary from two lists.
 
+output = zip(l1,l2)
+print(dict(output))
+
 # Write a program using map() and lambda together.
 
+t1 = (2,4,6,8,10,12,14,16)
+
+result = map(lambda x: x+1, t1)
+print(tuple(result))
+
 # Write a program using reduce() and lambda together.
+
+result = reduce(lambda x,y:x*y, t1)
+print(result)
 
 # LOGIC and MINI-PROJECT STYLE:
 
