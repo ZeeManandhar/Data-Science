@@ -473,10 +473,122 @@ print(result)
 
 # Write a program using functions to create a menu-driven calculator.
 
+def add_number(num1,num2):
+    return num1 + num2
+
+def subtract_num(num1,num2):
+    return num1 - num2
+
+def multiply_num(num1,num2):
+    return num1 * num2
+
+def divide_num(num1,num2):
+    if num2 == 0:
+        return "cannot divide by zero"
+    else:
+        return num1/num2
+
+def calculator(choice,num1,num2):
+    match choice:
+        case 1:
+            return add_number(num1,num2)
+        case 2:
+            return subtract_num(num1,num2)
+        case 3:
+            return multiply_num(num1,num2)
+        case 4:
+            return divide_num(num1,num2)
+        case _:
+            return "Invalid Option!"
+        
+result = calculator(1,5,10)
+print(result)
+
+result = calculator(2,10,8)
+print(result)
+
+result = calculator(3,10,10)
+print(result)
+
+result = calculator(4,50,5)
+print(result)
+      
+
 # Write a program using functions to implement a login system using dictionary.
+
+login_credentials = {
+    "ZeesonGroot":"Zee123#",
+    "DalliDon1":"Dalli1###"
+}
+
+def login_system(username,password):
+    if username in login_credentials and login_credentials[username] == password:
+        return "Login Sucessful!"
+    else:
+        return "Invalid Credentials! Please Try Again Later!"
+
+result = login_system("ZeesonGroot","Zee123#")
+print(result)
+
 
 # Write a program using functions to calculate student grade based on marks.
 
+def calculate_marks(marks):
+    if marks >= 90 and marks < 100:
+        return "Grade A"
+    elif marks >= 80 and marks < 90:
+        return "Grade B"
+    elif marks >= 70 and marks < 80:
+        return "Grade C"
+    elif marks >= 60 and marks < 70:
+        return "Grade D"
+    else:
+        return "Grade F"
+
+output = calculate_marks(75.5)
+print(output)
+
 # Write a program using functions to count word frequency in a sentence.
 
+def count_freq(word):
+    count = {}
+    split_word = word.split(" ")
+
+    for i in split_word:
+        if i not in count:
+            count[i] = 1
+        else:
+            count[i] += 1
+    return count
+
+result = count_freq("My Name is Zeeson Manandhar . My Dog Name is Dalli .")
+print(result)
+
+
 # Write a program using functions to manage a simple contact list (add, view, search).
+
+def contact_list(choice):
+    contacts = [9841626515]
+    if choice == 1:
+        data = int(input("Enter the Number To Add in Contacts: "))
+        contacts.append(data)
+        print("Contact Saved Sucessfully!")
+        print(contacts)
+
+    elif choice == 2:
+        if not contacts:
+            print("No Contacts Found!")
+
+        for i in range(len(contacts)):
+            print(f"{i+1}.) {contacts[i]}")
+
+    elif choice == 3:
+        data1 = int(input("Enter the Number to Search: "))
+        if data1 in contacts:
+            print("Contact Found!")
+        else:
+            print("Contact Not Found!")   
+    else:
+        print("Invalid Choice!")
+
+contact_list(3)
