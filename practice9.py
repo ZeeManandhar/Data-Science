@@ -534,7 +534,7 @@ print(result)
 # Write a program using functions to calculate student grade based on marks.
 
 def calculate_marks(marks):
-    if marks >= 90 and marks < 100:
+    if marks >= 90 and marks <= 100:
         return "Grade A"
     elif marks >= 80 and marks < 90:
         return "Grade B"
@@ -567,28 +567,42 @@ print(result)
 
 # Write a program using functions to manage a simple contact list (add, view, search).
 
-def contact_list(choice):
-    contacts = [9841626515]
-    if choice == 1:
-        data = int(input("Enter the Number To Add in Contacts: "))
-        contacts.append(data)
-        print("Contact Saved Sucessfully!")
-        print(contacts)
+contacts = []
 
-    elif choice == 2:
-        if not contacts:
-            print("No Contacts Found!")
+def contact_menu():
+    while True:
+        print("\n1. Add Contact")
+        print("2. View Contacts")
+        print("3. Search Contact")
+        print("4. Exit")
 
-        for i in range(len(contacts)):
-            print(f"{i+1}.) {contacts[i]}")
+        choice = input("Enter your choice: ")
 
-    elif choice == 3:
-        data1 = int(input("Enter the Number to Search: "))
-        if data1 in contacts:
-            print("Contact Found!")
+        if choice == "1":
+            number = input("Enter number to add: ")
+            contacts.append(number)
+            print("Contact added successfully!")
+
+        elif choice == "2":
+            if not contacts:
+                print("No contacts found!")
+            else:
+                print("Contact List:")
+                for i, number in enumerate(contacts, start=1):
+                    print(f"{i}. {number}")
+
+        elif choice == "3":
+            number = input("Enter number to search: ")
+            if number in contacts:
+                print("Contact found!")
+            else:
+                print("Contact not found!")
+
+        elif choice == "4":
+            print("Exiting...")
+            break
+
         else:
-            print("Contact Not Found!")   
-    else:
-        print("Invalid Choice!")
+            print("Invalid choice!")
 
-contact_list(3)
+contact_menu()
