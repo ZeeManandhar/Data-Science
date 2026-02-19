@@ -121,7 +121,7 @@ file.close()
 # 3.3) "append" --- Append Mode
 
 f = open("demo.txt","a")
-f.write("Added New Text!")
+f.write("\n Added New Text!")
 f.close()
 
 # Meaning:
@@ -181,3 +181,147 @@ print(f.read())
 # It will print nothing.
 # Because it already reached the end.
 
+# 4.2) read(size):
+
+# We can also read only some characters.
+
+# For Example:
+
+f = open("demo1.txt","r")
+content = f.read(4)
+print(content)
+file.close()
+
+
+# 4.3) readline():
+
+# This method only reads one line at a time.
+
+f = open("demo1.txt","r")
+content = f.readline()
+print(content)
+first_content = f.readline()
+print(first_content)
+file.close()
+
+# 4.4) readlines():
+
+# This reads all lines and stores them inside a list.
+
+# For Example:
+
+file = open("demo.txt","r")
+lines = file.readlines()
+print(lines)
+file.close()
+
+# It returns list of lines.
+
+# 5.) Writing Files: 
+
+file = open("write.txt","w")
+file.write("Hello Hi Hey! \nNew Day New Mood!!")
+file.close()
+
+# This will:
+# Open file in write mode
+# Delete old content
+# Write new content
+
+# Important: write() does NOT automatically go to new line. Must use \n for new line.
+
+# 6.) Append Mode
+
+file = open("write.txt","a")
+file.write("\nChill out! Have Good Day")
+file.close()
+
+# Add new content at the END
+# Do NOT delete old content
+
+# 7.) with Statement (Very Important):
+
+with open("write.txt","r") as file:
+    content = file.read()
+    print(content)
+
+# here, 
+# No close() needed.
+# When the block ends, Python automatically closes the file.
+
+# Think it like this:
+# with = "Use file safely"
+# When work is finished, it automatically close it.
+
+# 7.1) Why Professionals Use with
+# Cleaner code
+# Safer
+# Less errors
+# Automatic closing
+
+# Important Rule: Anything inside with block must be indented.
+
+# 8.) File Handling Errors:
+
+# Example:
+# What happens if we do this:
+
+# with open("unknown.txt", "r") as f:
+#     content = f.read()
+#     print(content)
+
+# if unknown.txt does NOT exist? Then:
+
+# Python will CRASH.
+# We will see error like:
+
+# FileNotFoundError: [Errno 2] No such file or directory: 'unknown.txt'
+
+# This is called a runtime error.
+# The program stops immediately.
+
+# Common File Errors:
+# a. File does not exist -----> FileNotFoundError
+# b. No permission to open ----> PermissionError
+
+
+# 10.) Basic try / except:
+
+# Why Do We Need try / except?
+
+# Example:
+
+# num = int(input("Enter the Number: "))
+# result = num/0
+# print(result)
+
+# This gives error and program crashes, which is not good in real applications.
+
+# For this: We can use try/except:
+
+# Basic Structure:
+
+# try:
+#     risky code
+# except:
+#     fallback code
+
+# Example: 
+try:
+    num = int(input("Enter the Number Please: "))
+    result = 5/num
+    print(result)
+except:
+    print("Something Went Wrong.")
+
+# Now, here:
+
+# If user enters 0 or abc
+# Program will NOT crash.
+# Instead it prints: Something Went Wrong.
+
+# Python says:
+# "Try this code."
+# "If any error happens, run the except block instead."
+
+# 11. Specific Exceptions:
