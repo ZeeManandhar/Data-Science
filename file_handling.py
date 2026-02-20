@@ -325,3 +325,106 @@ except:
 # "If any error happens, run the except block instead."
 
 # 11. Specific Exceptions:
+
+# Earlier we used:
+
+# except:
+#     print("Something Went Wrong.")
+
+# This catches all errors.
+# But this is not good practice.
+# It is better to catch specific errors.
+
+# 11.1) Using ZeroDivisionError (Example):
+
+try:
+    data = int(input("Enter the number please: "))
+    output = 10/data
+    print(output)
+except ZeroDivisionError:
+    print("Cannot Divide by Zero!")
+
+# here, 
+# -> if the user inputs 0, then it prints Cannot Divide by Zero!
+
+# 11.2) using ValueError (Example):
+
+try:
+    data = int(input("Please Enter Any Number = "))
+    sqr = data**2
+    print(sqr)
+except ValueError:
+    print("Invalid Input! Please enter a valid number.")
+
+# here, 
+# -> if the user inputs "abc", "xyz" then it prints "Invalid Input! Please enter a valid number".
+
+# 11.3) Multiple Exceptions:
+try:
+    num = int(input("Enter number: "))
+    print(10 / num)
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+except ValueError:
+    print("Invalid input! Enter numbers only.")
+
+
+# 12.) else and finally:
+
+# These are extra parts of try/except.
+# Structure:
+
+# try:
+#     risky code
+# except:
+#     handle error
+# else:
+#     runs if no error
+# finally:
+#     always runs
+
+# 12.1) else:
+
+# runs only if there is no errors!
+
+# For Example (List Index Program):
+try:
+    students = ["Zeeson","Sunil","Niraj","Arbind"]
+    index = int(input("Ënter the index(0-3): "))
+    result = students[index]
+except IndexError:
+    print("Error! Value out of Range.")
+except ValueError:
+    print("Invalid Value! Please Enter A Correct Number!")
+else:
+    print(f"The value = {result}")
+
+# If no error happens ---> else runs.
+# If error happens ----> else does NOT run.
+
+# 12.2) Finally:
+
+# This always runs.
+# No matter what (even there is error or no error).
+
+# For Example (File Handling Program):
+
+try: 
+    file = open("Zeeson.txt","r")
+    result = file.read()
+except FileNotFoundError:
+    print("There is no File with that Name.")
+else:
+    print(result)
+finally:
+    print("Program Finished!")
+
+# Even if error happens ---> finally runs.
+# Even if no error -------> finally runs.
+
+# Simple Memory Trick
+# try -->Try it
+# except---> If error
+# else ----> If no error
+# finally ---> Always
+
