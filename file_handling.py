@@ -428,3 +428,94 @@ finally:
 # else ----> If no error
 # finally ---> Always
 
+# 14.) Combining File Handling + Try/Except:
+
+
+# This is very important.
+# Because in real programs, files may not exist.
+# Without error handling, program crashes.
+
+# Example One:
+
+try:
+    with open("data.txt", "r") as file:
+        content = file.read()
+        print(content)
+except FileNotFoundError:
+    print("File Doesnot Exit!")
+
+# Example Two:
+
+try: 
+    with open("data.txt","w") as f:
+        f.write("Hello Beautiful People's!")
+        print(content)
+except PermissionError:
+    print("Permission Error")
+
+# Mini-Project One (Login & Register System Using File)
+
+print("1. Register\n2. Login")
+choice = int(input("Choose your option please = "))
+
+if choice == 1:
+    username = input("Enter your Username to Register: ").strip()
+
+    with open("users.txt","a") as users:
+        users.write(username + "\n")
+        print("Registration Done Sucessfully!")
+
+if choice == 2:
+    username = input("Enter Your Valid Username Please: ").strip()
+    try:
+        with open("users.txt","r") as data:
+            users = data.read()
+            print(users)
+        
+        if username in users:
+            print("Login Sucessful!")
+        else:
+            print("Invalid Username! Please Try Again!")
+    except FileNotFoundError:
+        print("Username Not Registered!")
+
+
+# MINI PROJECT TWO (ATM System Using File):
+
+print("1. Register\n2. Login")
+choice = int(input("Choose your option please : "))
+
+if choice == 1:
+    username = input("Enter your username to register: ").strip()
+    with open("accounts.txt","a") as file:
+        file.write(username + ",0\n")
+        print("Registration Sucessful!")
+        
+if choice == 2:
+    username = input("Enter your registered username: ").strip()
+
+    try:
+        with open("accounts.txt", "r") as file:
+            data = file.read()
+            lines = data.strip().split("\n")
+
+            found = False
+
+            for line in lines:
+                name, balance = line.split(",")
+
+                if username == name:
+                    print("Login Successful!")
+                    print("Your Current Balance is:", balance)
+                    found = True
+                    break
+
+            if not found:
+                print("Invalid Username!")
+
+    except FileNotFoundError:
+        print("User is not registered!")
+            
+        
+        
+                                
