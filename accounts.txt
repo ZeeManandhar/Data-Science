@@ -1,2 +1,2 @@
-ZeesonHero1,0
-SuloDon,0
+ZeesonHero1,10000
+SuloDon,11500

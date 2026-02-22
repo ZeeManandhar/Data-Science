@@ -506,16 +506,53 @@ if choice == 2:
 
                 if username == name:
                     print("Login Successful!")
-                    print("Your Current Balance is:", balance)
+                    balance = int(balance)
                     found = True
-                    break
-
-            if not found:
+                    
+                    while True:
+                        print("1. Check Balance\n2. Deposit Amount\n3. Withdraw Amount\n4. Logout")
+                        
+                        option = int(input("Choose your option: "))
+                        
+                        if option == 1:
+                            print(f"Your Current Balance is Rs {balance}.")
+                        
+                        elif option == 2:
+                            amount = int(input("Enter the amount to Deposit: "))
+                            balance = balance + amount
+                            print("Your Balance has been sucessfully deposited.")
+                            print(f"Your New Balance : Rs {balance}")
+                            
+                        elif option == 3:
+                            amount = int(input("Ënter the amount to withdraw: "))
+                            if amount <= balance:
+                                balance = balance - amount
+                                print("Amount Withdrawn Sucessfully!")
+                                print(f"Your Remaining Balance is {balance}.")
+                            else:
+                                print("Insufficient Balance!")
+                        elif option == 4:
+                            break 
+                                
+                        updated_data = []
+                                
+                        for l in lines:
+                            i , j = l.split(",")
+                            if i == username:
+                                updated_data.append(i+","+str(balance))
+                            else:
+                                updated_data.append(l)
+                        
+                        with open("accounts.txt","w") as file:
+                            for line in updated_data:
+                                file.write(line+"\n") 
+                             
+            if found == False:
                 print("Invalid Username!")
 
     except FileNotFoundError:
         print("User is not registered!")
-            
+              
         
         
                                 
