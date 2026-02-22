@@ -4,23 +4,87 @@
 
 # Write a program to create a file named data.txt and write “Hello Python” into it.
 
+file = open("data.txt", "w")
+file.write("Hello Python")
+file.close()
+
 # Write a program to read and display the content of data.txt.
+
+file = open("data.txt","r")
+content = file.read()
+print(content)
+file.close()
 
 # Write a program to append your city name to data.txt.
 
+file = open("data.txt","a")
+file.write("\nKathamdu,Nepal")
+file.close()
+
 # Write a program to count the number of characters in a file.
+
+with open("test1.txt","r") as file:
+    count = 0
+    content = file.read()
+    for i in content:
+        count = count + 1
+    print(f"There are altogether {count} characters present in a file.")
 
 # Write a program to count the number of lines in a file.
 
+with open("data.txt","r") as file:
+    count = 0
+    content = file.readlines()
+    for line in content:
+        count += 1
+    print(f"Total Number of Lines = {count}")
+       
 # Write a program to read only the first 5 characters of a file.
+
+with open("data.txt","r") as f:
+    result = f.read(5)
+    print(result)
 
 # Write a program to read a file line by line using a loop.
 
+with open("data.txt","r") as f:
+    line_count = 1
+    content = f.readlines()
+    for line in content:
+        print(f"line{line_count} : {line}")
+        line_count = line_count + 1
+
+
 # Write a program to handle FileNotFoundError while reading a file.
+try:
+    with open("test.txt","r") as f:
+        result = f.read()
+        print(result)
+except FileNotFoundError:
+    print("File Doesnot Exist!")
+
 
 # Write a program to take a number from user and handle invalid input using try/except.
 
+try: 
+    num = int(input("Enter a number please: "))
+    sqr_num = num**2
+    print(sqr_num)
+except ValueError:
+    print("Invalid Input! Please Use Numbers Only!")
+
 # Write a program to demonstrate try, except, else, and finally using a simple example.
+
+try: 
+    num = int(input("Enter a number please: "))
+    cube_num = num**3
+except ValueError:
+    print("Invalid Input! Please Use Numbers Only!")
+    
+else:
+    print(cube_num)
+finally:
+    print("Program Exceuted Sucessfully!")
 
 # INTERMEDIATE LEVEL:
 
