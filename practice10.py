@@ -90,7 +90,32 @@ finally:
 
 # Write a program to store 5 student names in a file and display them.
 
+# count = 1
+
+# while count <= 5:
+#     data = input("Enter The Student Name: ").strip()
+    
+#     with open("Students.txt","a") as file:
+#         file.write(data + "\n")
+#     count = count + 1
+
+# with open("Students.txt","r") as f:
+#     print(f.read())
+
+
 # Write a program to search for a name inside a file.
+
+with open("Students.txt","r") as file:
+    name = input("Enter the Name To Search: ").strip()
+    found = False
+    content = file.readlines()
+    for line in content:
+        if name == line.strip():
+            print("Name Found!")
+            found = True
+            break
+    if found == False:
+        print("Name Not Found!")
 
 # Write a program to store student name and marks in the format:
 
@@ -98,11 +123,58 @@ finally:
 # Sita,90
 # Hari,75
 
+while True:
+    print("1. Add Details\n2. Exit")
+    choice = int(input("Press 1 to Add Student's Info and 2 To Exit: "))
+    
+    if choice == 1:
+        name = input("Enter the Student Name: ").strip()
+        marks = int(input("Enter the mark: "))
+        
+        with open("marks.txt","a") as file:
+            file.write(name+","+str(marks)+"\n")
+            print("Detail Added!")
+    
+    elif choice == 2:
+        break
+        
 # Write a program to read student data and display only students who scored above 80.
+
+with open("marks.txt","r") as f:
+    content = f.readlines()
+    
+    for line in content:
+        name, marks = line.strip().split(",")
+        marks = int(marks)
+        if marks > 80:
+            print(f"{name} = {marks}")
 
 # Write a program to update a specific student’s marks in a file.
 
+
+
+
+
 # Write a program to prevent duplicate usernames during registration.
+
+username = input("Please Enter Username: ").strip()
+
+found = False
+try:
+    with open("users.txt", "r") as file:
+        for line in file:
+            if username == line.strip():
+                found = True
+                break
+
+except FileNotFoundError:
+    print("File not Found!")
+if found:
+    print("This Username Already Exists! Please Try Different Username.")
+else:
+    with open("users.txt", "a") as file:
+        file.write(username + "\n")
+    print("Registered Successfully!")
 
 # Write a program to build a simple login system using file storage.
 
