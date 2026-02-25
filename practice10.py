@@ -151,8 +151,33 @@ with open("marks.txt","r") as f:
 
 # Write a program to update a specific student’s marks in a file.
 
+std_name = input("Enter The Student Name To Update Marks: ").strip()
+new_marks = input("Enter the new marks: ").strip()
 
+found = False
+updated_list = []
 
+try:
+    with open("marks.txt", "r") as f:
+        for line in f:
+            name, marks = line.strip().split(",")
+
+            if name == std_name:
+                updated_list.append(name + "," + new_marks)
+                found = True
+            else:
+                updated_list.append(line.strip())
+
+    if found:
+        with open("marks.txt", "w") as f:
+            for line in updated_list:
+                f.write(line + "\n")
+        print("Marks Updated Successfully!")
+    else:
+        print("Student Not Found!")
+
+except FileNotFoundError:
+    print("File does not exist!")
 
 
 # Write a program to prevent duplicate usernames during registration.
@@ -178,11 +203,81 @@ else:
 
 # Write a program to build a simple login system using file storage.
 
+print("1.) Register\n2.) Login")
+choice = int(input("Choose the operation: "))
+
+if choice == 1:
+    username = input("Please Enter the Username to Register: ").strip()
+    password = input("Please Enter a Strong Password: ").strip()
+    found = False
+    try:
+        with open("new_cred.txt","r") as f:
+            content = f.readlines()
+            for i in content:
+                if "," in i:
+                    u,p = i.strip().split(",")
+                    if u == username:
+                        found = True
+                        print("Username Already Exists! Please Try A Different Username!")
+                        break
+                
+        if found == False:
+            with open("new_cred.txt","a") as file:
+                file.write(username+","+password+"\n")
+                print("Registration Sucessful!")
+                    
+    except FileNotFoundError:
+        print("The File Doesnot Exist!")
+        
+elif choice == 2:
+        username = input("Enter valid username: ").strip()
+        password = input("Enter valid password: ").strip()
+        
+        found = False
+        with open("new_cred.txt","r") as file:
+            content = file.readlines()
+            for line in content:
+                if "," in line:
+                    u,p = line.strip().split(",")
+                    if username == u and password == p:
+                        print(f"Welcome {username}! Login Sucessful!")
+                        found = True
+                        break
+        if found == False:
+            print("Invalid Credential! Please Try Again!")
+                        
 # Write a program to handle division by zero and invalid input together.
 
+try:
+    num1 = int(input("Enter the first number please: "))
+    num2 = int(input("Enter the Second Number Please: "))
+    output = num1/num2 
+    print(output)
+except ZeroDivisionError:
+    print("Cannot be Divided By Zero!")
+except ValueError:
+    print("Invalid Input! Please Enter Numbers Only!")
+    
+    
 # Write a program to copy content from one file to another safely using try/except.
 
+try:
+    with open("Students.txt","r") as f:
+        content = f.read()
+    with open("new_std.txt","w") as file:
+        file.write(content)
+    
+except FileNotFoundError:
+    print("The File Doesnot Exist!")
+
+
 # Write a program to create a file only if it does not already exist using "x" mode.
+
+try:
+    with open("file.txt","x") as f:
+        pass
+except FileExistsError:
+    print("The File already exist!")
 
 # ADVANCED LEVEL (Mini Projects + Real Logic)
 
