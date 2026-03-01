@@ -299,6 +299,32 @@ except FileExistsError:
 
 # Write a program to delete a specific user from a file.
 
+user = input("Enter the user to remove: ").strip()
+new_user = []
+found = False
+
+try:
+    with open("new_cred1.txt","r") as file:
+        content = file.readlines()
+        for line in content:
+            n , a = line.strip().split(",")
+            if n == user:
+                found = True
+                continue
+            else:
+                new_user.append(line.strip())
+                
+    if found == True:
+        with open("new_cred1.txt","w") as f:
+            for line in new_user:
+                f.write(line + "\n")
+                print("User Deleted SucessFully!")
+    else:
+        print("User Not Found!")
+            
+except FileNotFoundError:
+    print("File Not Found!")
+
 # Write a program to replace a specific word in a file.
 
 # Write a program to lock login after 3 failed attempts.
@@ -317,6 +343,5 @@ except FileExistsError:
 
 # Write a program to sort usernames alphabetically and rewrite the file.
 
-# Write a program to create a password-based login system with file storage.
 
 # Write a program to build a menu-driven file manager system with full exception handling.
