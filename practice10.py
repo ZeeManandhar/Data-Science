@@ -344,4 +344,3 @@ except FileNotFoundError:
 # Write a program to sort usernames alphabetically and rewrite the file.
 
 
-# Write a program to build a menu-driven file manager system with full exception handling.
