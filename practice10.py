@@ -281,21 +281,6 @@ except FileExistsError:
 
 # ADVANCED LEVEL (Mini Projects + Real Logic)
 
-# Write a program to build a complete ATM system with:
-
-# Register
-
-# Login
-
-# Check Balance
-
-# Deposit
-
-# Withdraw
-
-# Persistent storage in file
-
-# Write a program to maintain transaction history in a separate file.
 
 # Write a program to delete a specific user from a file.
 
@@ -327,7 +312,57 @@ except FileNotFoundError:
 
 # Write a program to replace a specific word in a file.
 
+old_word = input("Enter the word you want to replace: ").strip()
+new_word = input("Enter the new word: ").strip()
+
+try:
+    with open("details.txt","r") as file:
+        content = file.read()
+        if old_word not in content:
+            print("Word Not Found!")
+        else:
+            new_content = content.replace(old_word,new_word)
+    
+            with open("details.txt","w") as f:
+                f.write(new_content)
+                print("Word Replaced Sucessfully!")
+
+except FileNotFoundError:
+    print("File Doesnot exist!")
+
+
 # Write a program to lock login after 3 failed attempts.
+
+counter = 1
+
+while counter < 4:
+    username = input("Enter your registered username please: ").strip()
+    password = input("Enter your password please: ").strip()
+    
+    found = False
+    
+    try:
+        with open("new_cred.txt","r") as file:
+            content = file.readlines()
+            for cred in content:
+                new_cred = cred.strip().split(",")
+                u,p = new_cred
+                if username == u and password == p:
+                    found = True
+                    print("Login Sucessful!")
+                    break
+                
+        if found == True:
+            break
+        elif found == False:
+            print(f"Invalid Credentials! Please Try Again! Attempt no.: {counter}")
+            counter = counter + 1
+            if counter == 4:
+                print("Account Locked")
+                           
+    except FileNotFoundError:
+        print("File not Found!")
+
 
 # Write a program to build a note-taking system with:
 
@@ -339,8 +374,123 @@ except FileNotFoundError:
 
 # Exception handling
 
+# Note-Taking System
+
+while True:
+    print("\n1. Add Note")
+    print("2. View Notes")
+    print("3. Delete Note")
+    print("4. Exit")
+
+    try:
+        choice = int(input("Enter your choice: "))
+
+        if choice == 1:
+            note = input("Enter your note: ").strip()
+
+            with open("notes.txt", "a") as file:
+                file.write(note + "\n")
+
+            print("Note added successfully!")
+
+        elif choice == 2:
+            try:
+                with open("notes.txt", "r") as file:
+                    notes = file.readlines()
+
+                    if len(notes) == 0:
+                        print("No notes available.")
+                    else:
+                        print("\nYour Notes:")
+                        count = 1
+                        for note in notes:
+                            print(f"{count}. {note.strip()}")
+                            count += 1
+
+            except FileNotFoundError:
+                print("No notes found!")
+
+        elif choice == 3:
+            try:
+                with open("notes.txt", "r") as file:
+                    notes = file.readlines()
+
+                if len(notes) == 0:
+                    print("No notes available to delete.")
+                else:
+                    print("\nYour Notes:")
+                    count = 1
+                    for note in notes:
+                        print(f"{count}. {note.strip()}")
+                        count += 1
+
+                    try:
+                        note_number = int(input("Enter the note number to delete: "))
+
+                        if note_number < 1 or note_number > len(notes):
+                            print("Invalid note number!")
+                        else:
+                            del notes[note_number - 1]
+
+                            with open("notes.txt", "w") as file:
+                                for note in notes:
+                                    file.write(note)
+
+                            print("Note deleted successfully!")
+
+                    except ValueError:
+                        print("Please enter a valid number!")
+
+            except FileNotFoundError:
+                print("No notes found!")
+
+        elif choice == 4:
+            print("Exiting Note-Taking System.")
+            break
+
+        else:
+            print("Invalid choice! Please choose between 1 and 4.")
+
+    except ValueError:
+        print("Please enter numbers only!")
+
+
+
 # Write a program to count how many users have balance greater than 1000.
+
+count = 0
+
+try:
+    with open("accounts.txt","r") as file:
+        content = file.readlines()
+        for line in content:
+            new_content = line.strip().split(",")
+            u,b = new_content
+            balance = int(b)
+            if balance > 1000:
+                count = count + 1
+        print(f"Number of user with balace more than 1000 is {count}")
+        
+except FileNotFoundError:
+    print("File Doesnot Exit!")
+
 
 # Write a program to sort usernames alphabetically and rewrite the file.
 
-
+try:
+    with open("accounts.txt","r") as file:
+        content = file.readlines()
+        
+    content.sort()
+      
+    with open("accounts.txt","w") as f:
+        for line in content:
+            f.write(line)
+    print("File Sorted Sucessfully!")
+            
+except FileNotFoundError:
+    print("File Doesnot Exist!")
+    
+            
+            
+       
