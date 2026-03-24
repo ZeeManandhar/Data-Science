@@ -206,58 +206,137 @@ print(s1.Age)
 
 # 18.) Create a class Animal, assign type to 2 objects and print.
 
+class Animal:
+    def animal_type(self,type):
+        self.type = type
+        
+a1 = Animal()
+a1.animal_type("Wild Animals")
+print(a1.type)
 
+a2 = Animal()
+a2.animal_type("Domestic Animals")
+print(a2.type)
 
 
 # 19.) Create a class Laptop, assign brand and price to object.
 
+class Laptop:
+    def lap_brand(self,brand,price):
+        self.brand = brand
+        self.price = price
+        
+l1 = Laptop()
+l1.lap_brand("Dell 3511", 78000)
+print(f"Brand Name = {l1.brand} , Price = {l1.price}")
 
+l2 = Laptop()
+l2.lap_brand("Acer Nitro V16",145000)
+print(f"Brand Name = {l2.brand} , Price = {l2.price}")
 
+        
 # 20.) Create 3 objects of class Car, assign different colors to each.
 
+class Car:
+    def car_colors(self,colour):
+        self.colour = colour
+        
+c1 = Car()
+c1.car_colors("Black")
+print(c1.colour)
+
+c2 = Car()
+c2.car_colors("Blue")
+print(c2.colour)
+
+c3 = Car()
+c3.car_colors("White")
+print(c3.colour)
+
+
+# Level 3 – Using Methods & self (21–26):
 
 
 
-# Level 3 – Using Methods & self (21–30):
+# 21.) Create a class Student with method set_name(self, name) and store it using self.
 
-# Create a class Student with method set_name(self, name) and store it using self.
-
-
-
-# Create a class Car with method set_color(self, color) and print it.
-
-
-
-# Create a class Book with method set_info(self, title, price) and print both.
+class Student:
+    def set_names(self, name):
+        self.name = name
+        
+s1 = Student()
+s1.set_names("Zeeson Manandhar")
+print(s1.name)
 
 
+# 22.) Create a class Car with method set_color(self, color) and print it.
 
-# Create a class Movie with method set_data(self, name, rating) and print.
+class Car:
+    def set_color(self,color):
+        self.color = color
 
-
-
-# Create a class Phone with method set_details(self, brand, price).
-
-
-
-
-# Create 2 objects of Student and store different names using method.
+c1 = Car()
+c1.set_color("White Car")
+print(c1.color)
 
 
+# 23.) Create a class Book with method set_info(self, title, price) and print both.
+
+class Book:
+    def set_info(self,title,price):
+        self.title = title
+        self.price = price
+        
+b1 = Book()
+b1.set_info("Wonder", 500)
+print(b1.title)
+print(b1.price)
+
+b2 = Book()
+b2.set_info("Java(2025)", 450)
+print(b2.title)
+print(b2.price)
+
+# 24.) Create a class Movie with method set_data(self, name, rating) and print.
 
 
-# Create a class Laptop with method set_data(self, brand, ram) and print.
+class Movie:
+    def set_data(self, name, rating):
+        self.name = name
+        self.rating = rating
+
+m1 = Movie()
+m1.set_data("The Jungle Book", 9.3)
+print(m1.name)
+print(m1.rating)
 
 
+# 25.) Create a class Phone with method set_details(self, brand, price).
 
-# Create a class Animal with method set_type(self, type) and print.
+class Phone:
+    def set_details(self, brand, price):
+        self.brand = brand
+        self.price = price
+ 
+p1 = Phone()
+p1.set_details("Iphone 17", 270000)
+print(p1.brand) 
+print(p1.price)    
+
+# 26.) Create 2 objects of Student and store different names using method.
+
+class Student:
+    def std_info(self,name,age,program):
+        self.name = name
+        self.age = age
+        self.program = program
+        
+s1 = Student()
+s1.std_info("Sunil Kumar Sah",23,"Bsc.IT")
+print(s1.name)
+
+s2 = Student()
+s2.std_info("Arbind Mahato",25,"BHM")
+print(s2.name)
 
 
-
-# Create a class Car with method set_info(self, brand, speed) and print.
-
-
-
-# Create a class Person with method:
-   # def set_info(self, name, age, city)
-   # Store and print all values.
