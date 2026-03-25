@@ -100,3 +100,166 @@ class Dog(Animal):
 # Memorize:
 # Parent --> gives features
 # Child ---> takes + uses + extends
+
+
+# 3.) Syntax of Inheritance:
+
+# Basic Syntax:
+
+class Parent:
+    pass
+class Child(Parent):       # This means child class is inheriting from parent class
+    pass
+
+# For Example (Simple Code):
+
+class Animal:                                         # We create a parent class
+    def sleep(self):                                  # A method inside parent class
+        print("Animal is Sleeping!")
+        
+class Dog(Animal):                  # Dog is a child class and it inherits from Animal
+    pass
+
+d1 = Dog()
+d1.sleep()        # Even though Dog has no sleep() method,it can still use it because it inherited from Animal             
+
+
+# 4.) Using Parent Attributes and Methods
+
+# For Example:
+
+class Animal:
+    name = "Animal class Called!"           # Parent class has an attribute called name
+    
+    def walk(self):                             # Parent class has a method
+        print("Animal moves here and there!")
+        
+class Dog(Animal):                              # Dog inherits everything from Animal
+    pass
+
+d1 = Dog()
+print(d1.name)                                 # Child is accessing parent attribute
+d1.walk()                                      # Child is using parent method
+
+
+# Key Understanding
+    # Child class can directly use:
+    # -> Parent attributes 
+    # -> Parent methods 
+    # -> Even if child class has nothing inside it
+
+
+# 5.) Adding Child-Specific Features
+
+# A child class can add its own features in addition to inherited ones. 
+
+# For Example:
+
+class Animal:
+    name = "Animal Class Called"
+    
+    def eat(self):
+        print("Animal eats food!")
+        
+class Dog(Animal):
+    def bark(self):                      # This is new method added by child class
+        print("Dogs Barks!")
+        
+d1 = Dog()
+d1.bark()
+d1.eat()    
+
+# 6.) Creating Objects of Child Class
+
+# For Example:
+
+class Animal:
+    def eat(self):
+        print("Animal eats food")
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+
+d1 = Dog()
+
+# When we create a child object, it can access:
+    # Parent methods 
+    # Parent attributes 
+    # Child methods 
+    # Child attributes
+    
+# 7.) Types of Inheritance:
+
+# There are 3 different types of Inheritance:
+
+# a.) Single Inheritance:
+
+# Here, child class inherits the attributes and methods from a single parent.
+# One Parent ---> One Child
+
+# For Example:
+
+class Animal:
+    def eat(self):
+        print("Animal eats")
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+        
+# b.) Multiple Inheritance:
+
+# Here, child class inherits the attributes and methods from multiple parent classes.
+# one child ----> multiple parents
+
+# For Example:
+class Father:
+    def skill1(self):
+        print("Driving Skill!")
+        
+class Mother:
+    def skill2(self):
+        print("Cooking Skill!")
+
+class Child(Father,Mother):
+    pass
+
+c1 = Child()
+c1.skill1()
+
+# Child inherits from both Father and Mother
+
+# c.) Multilevel Inheritance:
+
+# Here, Child class inherits the attributes and methods from parent class and the parent class also inherits the arributes and methods from its parent class.
+# Chain of inheritance
+
+# For Example:
+
+class Animal:
+    def eat(self):
+        print("Animal Eats")
+        
+class Dog(Animal):
+    def bark(self):
+        print("Dog Barks!")
+        
+class Puppy(Dog):
+    def weep(self):
+        print("Puppy Weeps!")
+        
+p1 = Puppy()
+p1.eat()
+p1.bark()
+p1.weep()
+
+# Understanding:
+# Puppy ---> Dog -----> Animal
+# Puppy gets features from BOTH.
+
+# 8.) Method Overriding (Very Important)
+
+# If a child class creates a method with the same name as the parent
+    # The child method replaces the parent method.
+    # This is called Method Overriding.
