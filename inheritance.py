@@ -263,3 +263,98 @@ p1.weep()
 # If a child class creates a method with the same name as the parent
     # The child method replaces the parent method.
     # This is called Method Overriding.
+    
+# For Example:
+
+class Animal:                             # Parent Class
+    def sleeps(self):                     # Parent method
+        print("Animal Sleeps!")
+        
+class Cat(Animal):                        # Cat inherits from Animal
+    def sleeps(self):                     # Same method name as parent
+        print("Cat Sleeps!!")
+        
+c1 = Cat()
+c1.sleeps()                               # Python will call child’s version, not parent’s
+
+
+# Key Understanding:
+    # Parent method exists 
+    # Child method has same name
+    # Child method overrides parent 
+    
+
+# 9.) Introduction to super() (Basic):
+
+# super() goes to parent and run its method.
+# Basically its like: What if we want to use BOTH parent and child method?
+
+# For Example:
+
+# In Overriding:
+
+class Dog(Animal):
+    def speak(self):
+        print("Dog barks")
+        
+# here, Parent method is completely replaced.
+
+# Solution : using super()
+# super() allows child to call the parent method
+
+# For Example:
+
+class Animal:
+    def speak(self):
+        print("Animal makes sound")
+
+class Dog(Animal):
+    def speak(self):
+        super().speak()
+        print("Dog barks")
+
+d1 = Dog()
+d1.speak()
+
+# Key Understanding:
+    # Without super() -----> only child runs
+    # With super() --------> parent & child both runs
+    
+    
+# 10.) Step 10 – Method Resolution Order (MRO):
+
+# MRO means:
+# The order in which Python searches for methods
+
+# Simple Rule:
+
+# Python checks:
+# 1. Child class first
+# 2. Then Parent class
+
+# For Example:
+
+# In Multiple Inheritance (Basic Idea):
+
+class A:
+    def show(self):
+        print("Class A")
+
+class B:
+    def show(self):
+        print("Class B")
+
+class C(A, B):
+    pass
+
+c1 = C()
+c1.show()
+print(C.mro())
+
+# Python follows LEFT to RIGHT order.
+
+# Why MRO matters
+    # Avoid confusion in multiple inheritance
+    # Decide which method runs
+
+
