@@ -66,11 +66,70 @@ print(s1.name)
 
 
 # Level 2 – Using Parent Features
-# Create a class Animal with attribute type = "Living" and access it using a Dog object.
-# Create a class Vehicle with method stop() and call it using a Bike object (child class).
-# Create a class Bird with method fly() and call it using a Parrot object.
-# Create a class Shape with method draw() and call it using a Circle object.
-# Create a class Device with method power_on() and call it using a Mobile object.
+
+# 6.) Create a class Animal with attribute type = "Living" and access it using a Dog object.
+
+class Animal:
+    type = "living"
+    
+class Dog(Animal):
+    pass
+
+d1 = Dog()
+print(d1.type)
+
+# 7.) Create a class Vehicle with method stop() and call it using a Bike object (child class).
+
+class Vehicle:
+    def stop(self):
+        print("Engine Off!")
+        
+class Bike(Vehicle):
+    pass
+
+b1 = Bike()
+b1.stop()
+
+# 8.)  Create a class Bird with method fly() and call it using a Parrot object.
+
+class Bird:
+    def fly(self):
+        print("Birds fly!")
+        
+class Parrot(Bird):
+    pass
+
+p1 = Parrot()
+p1.fly()
+
+
+# 9.)  Create a class Shape with method draw() and call it using a Circle object.
+
+class Shape:
+    def draw(self):
+        print("Drawing!")
+        
+class Circle(Shape):
+    pass
+
+c1 = Circle()
+c1.draw()
+        
+
+# 10.) Create a class Device with method power_on() and call it using a Mobile object.
+
+class Device:
+    def power_on(self):
+        print("Power on!")
+        
+class Mobile(Device):
+    pass
+
+m1 = Mobile()
+m1.power_on()
+
+
+
 # Level 3 – Adding Child Features
 # Create a class Animal with method eat() and a class Dog that adds method bark(), then call both methods.
 # Create a class Vehicle with method start() and a class Car that adds method drive(), then call both.
