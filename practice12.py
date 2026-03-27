@@ -128,14 +128,80 @@ class Mobile(Device):
 m1 = Mobile()
 m1.power_on()
 
-
-
 # Level 3 – Adding Child Features
-# Create a class Animal with method eat() and a class Dog that adds method bark(), then call both methods.
-# Create a class Vehicle with method start() and a class Car that adds method drive(), then call both.
-# Create a class Person with method show() and a class Teacher that adds method teach(), then call both.
-# Create a class Phone with method call() and a class SmartPhone that adds method camera(), then call both.
-# Create a class Employee with method work() and a class Manager that adds method manage(), then call both.
+
+# 11.) Create a class Animal with method eat() and a class Dog that adds method bark(), then call both methods.
+
+class Animal:
+    def eat(self):
+        print("Animal eating")
+        
+class Dog(Animal):
+    def bark(self):
+        print("Dogs Barking")
+        
+d1 = Dog()
+d1.bark()
+d1.eat()
+
+# 12.) Create a class Vehicle with method start() and a class Car that adds method drive(), then call both.
+
+class Vehicle:
+    def start(self):
+        print("Engine Start!")
+        
+class Car(Vehicle):
+    def drive(self):
+        print("Driving!")
+        
+c1 = Car()
+c1.start()
+c1.drive()
+
+# 13.) Create a class Person with method show() and a class Teacher that adds method teach(), then call both.
+
+class Person:
+    def show(self):
+        print("Show Called!")
+        
+class Teacher(Person):
+    def teach(self):
+        print("Teaching!")
+        
+t1 = Teacher()
+t1.show()
+t1.teach()
+
+
+# 14.)  Create a class Phone with method call() and a class SmartPhone that adds method camera(), then call both.
+
+class Phone:
+    def call(self):
+        print("Phone Calling!")
+        
+class SmartPhone(Phone):
+    def camera(self):
+        print("Camera Clicking!")
+
+s1 = SmartPhone()
+s1.call()
+s1.camera()
+
+# 15.) Create a class Employee with method work() and a class Manager that adds method manage(), then call both.
+
+class Employee:
+    def work(self):
+        print("Employee Working!")
+        
+class Manager(Employee):
+    def manage(self):
+        print("Manager managing!")
+        
+m1 = Manager()
+m1.work()
+m1.manage()
+
+
 # Level 4 – Method Overriding
 # Create a class Animal with method sound() that prints "Animal sound", then override it in Dog to print "Dog barks".
 # Create a class Vehicle with method move() that prints "Vehicle moves", then override it in Car to print "Car runs fast".
