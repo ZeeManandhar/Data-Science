@@ -345,27 +345,90 @@ l1.power_on()
 
 # Level 6 – Types of Inheritance
 
-# 26.) Create a single inheritance example with Animal → Dog including methods eat() and bark().
+# 26.) Create a single inheritance example with Animal ---> Dog including methods eat() and bark().
+
+class Animal:
+    def eat(self):
+        print("Animal needs Food to survive!")
+        
+class Dog(Animal):
+    def bark(self):
+        print("Dogs Bark!")
+        
+d1 = Dog()
+d1.eat()
+d1.bark()
+
+# 27.) Create a multilevel inheritance example with Animal --> Dog ----> Puppy and call all methods.
+
+class Animal:
+    def breathe(self):
+        print("Animal breathes!")
+        
+class Dog(Animal):
+    def bark(self):
+        print("Dogs Bark!")
+
+class Puppy(Dog):
+    def vaccine(self):
+        print("Puppy needs Vaccine!")
+
+p1 = Puppy()
+p1.vaccine()
+p1.bark()
+p1.breathe()
 
 
+# 28.) Create a multiple inheritance example with Father ---> drive(), Mother ----> cook(), and Child inheriting both, then call both methods.
 
+class Father:
+    def drive(self):
+        print("Gets Driving skill")
+        
+class Mother:
+    def cook(self):
+        print("Gets Cooking skill")
+        
+class Child(Father,Mother):
+    pass
 
-
-# 27.) Create a multilevel inheritance example with Animal → Dog → Puppy and call all methods.
-
-
-
-
-# 28.) Create a multiple inheritance example with Father → drive(), Mother → cook(), and Child inheriting both, then call both methods.
-
-
-
+c1 = Child()
+c1.drive()
+c1.cook()
 
 # 29.) Create classes A and B with method show(), then create class C(A, B) and call show() to observe MRO.
 
+class A:
+    def show(self):
+        print("A Class Called!")
+        
+class B:
+    def show(self):
+        print("B Class Called!")
+
+class C(A,B):
+    pass
+
+c1 = C()
+print(C.mro())
+c1.show()
 
 
+# 30.) Create a multilevel inheritance example Person ---> Employee ---> Manager, override a method in Manager, and use super().
 
+class Person:
+    def role(self):
+        print("Not Defined!")
 
+class Employee(Person):
+    def role(self):
+        super().role()
+        print("Employee fulfills duties and responsibilities!")
 
-# 30.) Create a multilevel inheritance example Person → Employee → Manager, override a method in Manager, and use super().
+class Manager(Employee):
+    def role(self):
+        super().role()
+        print("Manager supervises overall activities!")
+
+m1 = Manager()
+m1.role()
