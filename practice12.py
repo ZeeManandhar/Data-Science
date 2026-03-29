@@ -203,20 +203,169 @@ m1.manage()
 
 
 # Level 4 – Method Overriding
-# Create a class Animal with method sound() that prints "Animal sound", then override it in Dog to print "Dog barks".
-# Create a class Vehicle with method move() that prints "Vehicle moves", then override it in Car to print "Car runs fast".
-# Create a class Person with method role(), then override it in Student with a different message.
-# Create a class Shape with method area(), then override it in Circle with a different message.
-# Create a class Account with method info(), then override it in SavingsAccount with a different message.
+
+# 16.) Create a class Animal with method sound() that prints "Animal sound", then override it in Dog to print "Dog barks".
+
+class Animal:
+    def sound(self):
+        print("Animal sound")
+        
+class Dog(Animal):
+    def sound(self):
+        print("Dog barks")
+
+d1 = Dog()
+d1.sound()
+
+# 17.) Create a class Vehicle with method move() that prints "Vehicle moves", then override it in Car to print "Car runs fast".
+
+class Vehicle:
+    def move(self):
+        print("Vehicle moves")
+
+class Car(Vehicle):
+    def move(self):
+        print("Car runs fast")
+        
+c1 = Car()
+c1.move()
+
+
+# 18.) Create a class Person with method role(), then override it in Student with a different message.
+
+class Person:
+    def role(self):
+        print("Normal Person")
+        
+class Student(Person):
+    def role(self):
+        print("Student")
+        
+s1 = Student()
+s1.role()
+
+# 19.) Create a class Shape with method area(), then override it in Circle with a different message.
+
+class Shape:
+    def area(self):
+        print("Area of the Shape")
+        
+class Circle(Shape):
+    def area(self):
+        print("Area of Circle")
+
+c1 = Circle()
+c1.area()
+
+
+# 20.) Create a class Account with method info(), then override it in SavingsAccount with a different message.
+
+class Account:
+    def info(self):
+        print("Account Type")
+        
+class SavingsAccount(Account):
+    def info(self):
+        print("Saving Account")
+        
+s1 = SavingsAccount()
+s1.info()
+
 # Level 5 – Using super()
-# Create a class Animal with method eat(), then override it in Dog and use super() to call both parent and child methods.
-# Create a class Vehicle with method start(), then override it in Car and use super() to call both methods.
-# Create a class Person with method show(), then override it in Student and use super().
-# Create a class Employee with method work(), then override it in Manager using super().
-# Create a class Device with method power_on(), then override it in Laptop and use super().
+
+# 21.) Create a class Animal with method eat(), then override it in Dog and use super() to call both parent and child methods.
+
+class Animal:
+    def eat(self):
+        print("Animal eats")
+        
+class Dog(Animal):
+    def eat(self):
+        super().eat()
+        print("Dog eat bones")
+        
+d1 = Dog()
+d1.eat()
+
+# 22.) Create a class Vehicle with method start(), then override it in Car and use super() to call both methods.
+
+class Vehicle:
+    def start(self):
+        print("Vehicle Starting.......!")
+class Car(Vehicle):
+    def start(self):
+        super().start()
+        print("Car Starting.....!")
+c1 = Car()
+c1.start()
+
+# 23.) Create a class Person with method show(), then override it in Student and use super().
+
+class Person:
+    def show(self):
+        print("Unknown Person")
+        
+class Student(Person):
+    def show(self):
+        super().show()
+        print("Person is Student")
+
+s1 = Student()
+s1.show()
+
+
+# 24.) Create a class Employee with method work(), then override it in Manager using super().
+
+class Employee:
+    def work(self):
+        print("Its Employee!")
+
+class Manager(Employee):
+    def work(self):
+        super().work()
+        print("Its Manager!")
+
+m1 = Manager()
+m1.work()
+
+
+# 25.) Create a class Device with method power_on(), then override it in Laptop and use super().
+
+class Device:
+    def power_on(self):
+        print("Device power on!")
+
+class Laptop(Device):
+    def power_on(self):
+        super().power_on()
+        print("Laptop power on")
+        
+l1 = Laptop()
+l1.power_on()
+
 # Level 6 – Types of Inheritance
-# Create a single inheritance example with Animal → Dog including methods eat() and bark().
-# Create a multilevel inheritance example with Animal → Dog → Puppy and call all methods.
-# Create a multiple inheritance example with Father → drive(), Mother → cook(), and Child inheriting both, then call both methods.
-# Create classes A and B with method show(), then create class C(A, B) and call show() to observe MRO.
-# Create a multilevel inheritance example Person → Employee → Manager, override a method in Manager, and use super().
+
+# 26.) Create a single inheritance example with Animal → Dog including methods eat() and bark().
+
+
+
+
+
+# 27.) Create a multilevel inheritance example with Animal → Dog → Puppy and call all methods.
+
+
+
+
+# 28.) Create a multiple inheritance example with Father → drive(), Mother → cook(), and Child inheriting both, then call both methods.
+
+
+
+
+# 29.) Create classes A and B with method show(), then create class C(A, B) and call show() to observe MRO.
+
+
+
+
+
+
+# 30.) Create a multilevel inheritance example Person → Employee → Manager, override a method in Manager, and use super().
