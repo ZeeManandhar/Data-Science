@@ -123,6 +123,71 @@ class Student:
 # This will give error because Python hides the variable internally.
 # This is also called Name Mangling.
 
-# Very simple idea
-# _age --> “please don’t touch”
-# __age ---> “you really can’t touch directly”
+
+# 4.) Accessing Private Data
+
+# __variable is private
+# Python hides it (name mangling)
+
+class Student:
+    __age = 55
+
+s1 = Student()
+# print(s1.__age)          Throws AttributeError: 'Student' object has no attribute '__age'
+
+# When we write:
+# __age
+# Python changes it to:
+# _Student__age
+
+# So, here 
+# We are asking for __age but Actual name is _Student__age.
+
+# Important Concept here:
+# --> Private variable is not removed
+# ---> It is just hidden and renamed
+
+# We can still acess it using:
+
+print(s1._Student__age)
+
+# This is not the proper way to access any data because: It breaks encapsulation
+# It breaks encapsulation
+# It is unsafe
+# Not good practice
+
+# Main Rule:
+#  Never access private data directly
+#  Always use methods 
+
+# 5.) Getter Methods
+
+# A getter is a method used to read (get) private data safely.
+# We use getter to access data in a controlled way.
+
+# Since We know:
+# print(s1.__age)       throws error and  we cannot access the private data directly, so we use getter.
+
+# For Example:
+
+class Student:                           # Creating class
+    __age = 15                           # Private variable (hidden)
+    def getAge(self):                    # Method (getter)
+        print(self.__age)                # Accessing private variable inside class
+        
+s1 = Student()
+s1.getAge()
+
+# Outside world cannot access __age directly But can access it through get_age().
+
+# Simply, Getter = read private data safely
+
+# 6.) Setter Methods
+
+# Without using:
+class Amount:
+    balance = 5000
+    
+a1 = Amount()
+a1.balance = -2000
+print(a1.balance)
