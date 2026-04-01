@@ -302,7 +302,7 @@ b1.balance = -99999
 # This breaks the System.
 
 # With Data Hiding:
-b1.set_balance(-99999)   # Blocked
+# b1.set_balance(-99999)   # Blocked
 
 
 # 9.) Naming Convention in Python
@@ -347,3 +347,40 @@ __age = 50
 # s1 = Student()
 # print(s1.__age)   # throws error
 
+
+# 10.) Private Methods in Python:
+
+# A private method is a method that:
+    # is used only inside the class
+    # should not be called directly from outside
+    
+# Basic Syntax:
+def __method(self):
+    pass
+
+# Double underscore (__) makes it private
+
+# Simple Example:
+
+class Bank:
+    def __calculate_interest(self):
+        print("Interest Calculated!")
+        
+    def show_interest(self):
+        self.__calculate_interest()
+        
+b1 = Bank()
+b1.show_interest()
+
+
+# Name Mangling (same concept):
+# __calculate_interest becomes _Bank__calculate_interest.
+
+# Note
+# Like private variables:
+    # Can still be accessed using _ClassName__method
+    # But NOT recommended
+    
+# Final Understanding:
+# Private variable ---> hides data
+# Private method -----> hides internal logic
