@@ -1,0 +1,93 @@
+# Practice Question on Encapsulation:
+
+#  BASIC LEVEL (1–15):
+
+# 1.) Write a program to create a class Student with a private variable __name and a getter method to print it.
+
+
+# 2.) Write a program to create a class Person with a private variable __age and a method to display age.
+
+
+
+# 3.) Write a program to create a class Car with private variable __brand and print it using a getter.
+
+
+
+# 4.)  Write a program to create a class Book with private variable __title and access it using a method.
+
+
+
+# 5.) Write a program to create a class User with private variable __username and print it safely.
+
+
+
+# 6.) Write a program to create a class Mobile with private variable __price and return it using a method.
+
+
+
+# 7.) Write a program to create a class Laptop with private variable __model and display it.
+
+
+
+# 8.) Write a program to create a class City with private variable __name and print it using a getter.
+
+
+
+# 9.) Write a program to create a class Animal with private variable __type and display it.
+
+
+
+
+# 10.) Write a program to create a class Movie with private variable __rating and print it.
+
+
+
+# 11.) Write a program to create a class Employee with private variable __salary and show it using a method.
+
+
+
+# 12.) Write a program to create a class Bank with private variable __balance and print it.
+
+
+
+# 13.) Write a program to create a class Teacher with private variable __subject and display it.
+
+
+
+# 14.) Write a program to create a class Food with private variable __name and print it.
+
+
+
+
+# 15.) Write a program to create a class Country with private variable __capital and access it using a getter.
+
+
+
+
+#  INTERMEDIATE LEVEL (16–30):
+# Write a program to create a class Student with private variable __marks and use getter and setter methods.
+# Write a program to create a class Person with private variable __age and validate age > 0 in setter.
+# Write a program to create a class Bank with private variable __balance and update it using setter only if amount ≥ 0.
+# Write a program to create a class Product with private variable __price and prevent negative price.
+# Write a program to create a class Account with private variable __balance and allow deposit only if amount > 0.
+# Write a program to create a class Account with private variable __balance and allow withdrawal only if balance is sufficient.
+# Write a program to create a class Employee with private variable __salary and increase salary using setter.
+# Write a program to create a class Temperature with private variable __celsius and validate it is not below absolute zero.
+# Write a program to create a class User with private variable __password and method to check password.
+# Write a program to create a class Exam with private variable __marks and ensure marks are between 0 and 100.
+# Write a program to create a class Car with private variable __speed and restrict speed limit.
+# Write a program to create a class Wallet with private variable __money and methods to add and spend money.
+# Write a program to create a class Laptop with private variable __battery and prevent battery level > 100.
+# Write a program to create a class Library with private variable __books and return count using getter.
+# Write a program to create a class Game with private variable __score and update score using setter.
+# ADVANCED LEVEL (31–40):
+# Write a program to create a class Bank with private variable __balance, and methods for deposit, withdraw, and check balance with full validation.
+# Write a program to create a class ATM with private method __authenticate() and public method login().
+# Write a program to create a class Calculator with private method __add() and public method calculate().
+# Write a program to create a class LoginSystem with private variable __password and method to verify login.
+# Write a program to create a class Student with private variable __marks and calculate grade internally using private method.
+# Write a program to create a class ShoppingCart with private variable __items and methods to add/remove items.
+# Write a program to create a class BankAccount with private variable __balance and maintain transaction history.
+# Write a program to create a class UserProfile with private variables and control updates using setters.
+# Write a program to create a class Hospital with private patient data and methods to access limited info.
+# Write a program to create a class SecureSystem with private method for encryption and public method to send data.
