@@ -125,16 +125,33 @@ b1.check_balance()
 
 # 13.) Write a program to create a class Teacher with private variable __subject and display it.
 
+class Teacher:
+    __subject = "Programming"
+    def get_subject(self):
+        print(self.__subject)
 
+t1 = Teacher()
+t1.get_subject()
 
 # 14.) Write a program to create a class Food with private variable __name and print it.
 
+class Food:
+    __name = "Pizza"
+    def get_food_name(self):
+        print(self.__name)
 
-
+f1 = Food()
+f1.get_food_name()
 
 # 15.) Write a program to create a class Country with private variable __capital and access it using a getter.
 
+class Country:
+    __capital = "Kathmandu"
+    def get_capital(self):
+        print(self.__capital)
 
+c1 = Country()
+c1.get_capital()
 
 
 #  INTERMEDIATE LEVEL (16–30):
