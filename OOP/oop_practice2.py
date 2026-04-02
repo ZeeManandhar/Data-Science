@@ -194,9 +194,13 @@ print(p1.get_age())
 
 class Bank:
     __balance = 1000
-    def set_balance(self,new_balance):
-        self.__balance = self.__balance + new_balance
-       
+
+    def set_balance(self, new_balance):
+        if new_balance >= 0:
+            self.__balance = new_balance
+        else:
+            print("Invalid amount!")
+
     def check_balance(self):
         return self.__balance
     
@@ -285,46 +289,155 @@ print("Latest Salary:",e1.check_salary())
 
 # 23.) Write a program to create a class Temperature with private variable __celsius and validate it is not below absolute zero.
 
+class Temperature:
+    __celsius = 0
+
+    def set_temperature(self, temp):
+        if temp >= -273.15:
+            self.__celsius = temp
+        else:
+            print("Invalid temperature! Below absolute zero.")
+
+    def get_temperature(self):
+        return self.__celsius
+
+
+t1 = Temperature()
+
+t1.set_temperature(25)      
+print(t1.get_temperature())
+
+t1.set_temperature(-300)    
+
 
 # 24.) Write a program to create a class User with private variable __password and method to check password.
 
+class User:
+    __password = "ZeesonGroot123#"
+    def check_password(self,password):
+        if self.__password == password:
+            print("Password Matched!")
+        else:
+            print("Invalid Password!")
 
+use = User()
+use.check_password("ZeesonGroot123#")
 
 # 25.) Write a program to create a class Exam with private variable __marks and ensure marks are between 0 and 100.
 
+class Exam:
+    __marks  = 0
+    
+    def set_marks(self,new_marks):
+        if new_marks >= 0 and new_marks <= 100:
+            self.__marks = new_marks
+        else:
+            print("Invalid Marks")
+            
+    def get_marks(self):
+        return self.__marks
 
-
+e1 = Exam()
+e1.set_marks(55)
+print(e1.get_marks())
+    
 # 26.) Write a program to create a class Car with private variable __speed and restrict speed limit.
 
+class Car:
+    __speed = 0
+
+    def set_speed(self, speed):
+        if speed <= 50:
+            self.__speed = speed
+        else:
+            print("Speed limit exceeded!")
+
+    def get_speed(self):
+        return self.__speed
+    
+c1 = Car()
+c1.set_speed(40)
+
+print(c1.get_speed())
 
 
 # 27.) Write a program to create a class Wallet with private variable __money and methods to add and spend money.
 
+class Wallet:
+    __money = 500
+    
+    def add_money(self,money):
+        if money > 0:
+            self.__money += money
+            print(f"Your total money: {self.__money}")
+        else:
+            print("Invalid Amount!")
+            
+    def spend_money(self,amount):
+        if amount > 0 and amount <= self.__money:
+            self.__money -= amount
+            print(f"Your Total Money left after spending: {self.__money}")
+            print(f"Spent Amount : {amount}")
+        else:
+            print("Insufficient Money!")
+            
+w1 = Wallet()
+w1.add_money(100)
 
+w1.spend_money(10)
 
 # 28.) Write a program to create a class Laptop with private variable __battery and prevent battery level > 100.
 
-
+class Laptop:
+    __battery = 0
+    
+    def set_battery(self,battery):
+        if battery >= 0 and battery <= 100:
+            self.__battery = battery
+        else:
+            print("Warning : Battery Level Exceeded!")
+            
+    def check_battery_status(self):
+        return self.__battery
+    
+l1 = Laptop()
+l1.set_battery(90)
+print(l1.check_battery_status())
 
 
 # 29.) Write a program to create a class Library with private variable __books and return count using getter.
 
+class Library:
+    __books = 5
 
+    def get_books(self):
+        return self.__books
 
+l1 = Library()
+print(l1.get_books())
 
 # 30.) Write a program to create a class Game with private variable __score and update score using setter.
 
+class Game:
+    __score = 0
+    def set_score(self,new_score):
+        self.__score = new_score
+    
+    def get_score(self):
+        return self.__score
 
-
+g1 = Game()
+g1.set_score(50)
+print(g1.get_score())
 
 # ADVANCED LEVEL (31–40):
-# Write a program to create a class Bank with private variable __balance, and methods for deposit, withdraw, and check balance with full validation.
-# Write a program to create a class ATM with private method __authenticate() and public method login().
-# Write a program to create a class Calculator with private method __add() and public method calculate().
-# Write a program to create a class LoginSystem with private variable __password and method to verify login.
-# Write a program to create a class Student with private variable __marks and calculate grade internally using private method.
-# Write a program to create a class ShoppingCart with private variable __items and methods to add/remove items.
-# Write a program to create a class BankAccount with private variable __balance and maintain transaction history.
-# Write a program to create a class UserProfile with private variables and control updates using setters.
-# Write a program to create a class Hospital with private patient data and methods to access limited info.
-# Write a program to create a class SecureSystem with private method for encryption and public method to send data.
+# 31.) Write a program to create a class Bank with private variable __balance, and methods for deposit, withdraw, and check balance with full validation.
+# 32.) Write a program to create a class ATM with private method __authenticate() and public method login().
+# 33.) Write a program to create a class Calculator with private method __add() and public method calculate().
+# 34.) Write a program to create a class LoginSystem with private variable __password and method to verify login.
+# 35.) Write a program to create a class Student with private variable __marks and calculate grade internally using private method.
+# 36.) Write a program to create a class ShoppingCart with private variable __items and methods to add/remove items.
+# 37.) Write a program to create a class BankAccount with private variable __balance and maintain transaction history.
+# 38.) Write a program to create a class UserProfile with private variables and control updates using setters.
+# 39.) Write a program to create a class Hospital with private patient data and methods to access limited info.
+# 40.) Write a program to create a class SecureSystem with private method for encryption and public method to send data.
