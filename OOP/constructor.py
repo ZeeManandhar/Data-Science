@@ -64,5 +64,13 @@ print(f"Age = {s1.Age}")
 
 # Very Simple Example:
 
+class Example:                                   # Creating a class
+    def __init__(self):                          # Defining constructor
+        print("Constructor is Running!")        # this will execute automatically
+        
+e1 = Example()                                # Object is created → constructor runs automatically
 
+# 3.) Creating Attributes using Constructor:
 
+# Attribute is a variable that belongs to a class or object
+# There are two types of attributes:
