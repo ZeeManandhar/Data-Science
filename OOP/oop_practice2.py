@@ -430,14 +430,179 @@ g1 = Game()
 g1.set_score(50)
 print(g1.get_score())
 
-# ADVANCED LEVEL (31–40):
+
+# ADVANCED LEVEL (31–38):
+
 # 31.) Write a program to create a class Bank with private variable __balance, and methods for deposit, withdraw, and check balance with full validation.
+
+class Bank:
+    __intial_balance = 1000
+    
+    def deposit(self,balance):
+        if balance > 0:
+            self.__intial_balance = self.__intial_balance + balance
+            print(f"Rs.{balance} has been deposited sucessfully!")
+        else:
+            print("Enter valid amount please! Try Again")
+
+    def withdraw(self,amount):
+        if amount > 0 and amount <= self.__intial_balance:
+            self.__intial_balance -= amount
+            print(f"Rs.{amount} has been sucessfully withdrawn from your account!")
+        else:
+            print("Invalid Amount")
+            
+    def check_balance(self):
+        return self.__intial_balance
+    
+b1 = Bank()
+b1.deposit(5000)
+b1.withdraw(500)
+print("Your Current Balance:",b1.check_balance())
+
 # 32.) Write a program to create a class ATM with private method __authenticate() and public method login().
+
+class ATM:
+    __username = "Zeesonmdr"
+    __password = "Admin@123"
+    
+    def __authenticate(self,username,password):
+        if self.__username == username and self.__password == password:
+            print("Login sucessfull!")
+        else:
+            print("Invalid Credentials!")
+            
+    def login(self,username,password):
+        self.__authenticate(username,password)
+
+a1 = ATM()
+a1.login("Zeesonmdr","Admin@123")
+
 # 33.) Write a program to create a class Calculator with private method __add() and public method calculate().
+
+class Calculator:
+    def __add(self,num1,num2):
+         return num1 + num2
+        
+     
+    def calculate(self,num1,num2):
+         return self.__add(num1,num2)   
+
+c1 = Calculator()
+print(c1.calculate(5,6))
+  
 # 34.) Write a program to create a class LoginSystem with private variable __password and method to verify login.
+
+class LoginSystem:
+    __password = "admin@123"
+    
+    def login(self,password):
+        if self.__password == password:
+            print("Login Sucessful")
+        else:
+            print("Invalid Password!")
+            
+l1 = LoginSystem()
+l1.login("admin@123")
+
 # 35.) Write a program to create a class Student with private variable __marks and calculate grade internally using private method.
+
+class Student:
+    __marks = 80
+    def __calculate_grade(self):
+        if self.__marks >= 90 and self.__marks <=100:
+            print("A+")
+        elif self.__marks >= 80 and self.__marks < 90:
+            print("A")
+        elif self.__marks >= 70 and self.__marks < 80:
+            print("B+")
+        elif self.__marks >= 60 and self.__marks < 70:
+            print("B")
+        elif self.__marks >= 50 and self.__marks < 60:
+            print("C+")
+        elif self.__marks >= 40 and self.__marks < 50:
+            print("C")
+        elif self.__marks >= 0 and self.__marks < 40:
+            print("Fail")
+        else:
+            print("Invalid Mark!")
+            
+    def get_grade(self):
+        self.__calculate_grade()
+
+s1 = Student()
+s1.get_grade()
+
 # 36.) Write a program to create a class ShoppingCart with private variable __items and methods to add/remove items.
-# 37.) Write a program to create a class BankAccount with private variable __balance and maintain transaction history.
-# 38.) Write a program to create a class UserProfile with private variables and control updates using setters.
-# 39.) Write a program to create a class Hospital with private patient data and methods to access limited info.
-# 40.) Write a program to create a class SecureSystem with private method for encryption and public method to send data.
+
+class ShoppingCart:
+    __items = []
+    
+    def add_items(self,items):
+        self.__items.append(items)
+        return self.__items
+    
+    def remove_items(self,item):
+        if item in self.__items:
+            self.__items.remove(item)
+        else:
+            print("Item Not Found!")
+            
+    def view_items(self):
+        return self.__items
+    
+sc = ShoppingCart()
+sc.add_items("Laptop")
+sc.add_items("Phone")
+sc.add_items("Charger")
+
+sc.remove_items("Phone")
+
+print(sc.view_items())
+
+# 37.) Write a program to create a class UserProfile with private variables and control updates using setters.
+
+class UserProfile:
+    __name = "Zeeson Manandhar"
+    __email = "zeeson.manandhar11@gmail.com"
+    __age = 22
+    
+    def set_name(self,name):
+        self.__name = name
+    
+    def set_email(self,email):
+        if "@" in email:
+            self.__email = email
+        else:
+            print("Invalid Email Format!")
+    
+    def set_age(self,age):
+        if age > 0:
+            self.__age = age
+        else:
+            print("Invalid Age!")
+            
+    def get_info(self):
+        return self.__name, self.__age, self.__email
+        
+u1 = UserProfile()
+u1.set_name("Zeeson Mdr")
+u1.set_email("zeeson.manandhar12@gmail.com")
+u1.set_age(23)    
+            
+print(u1.get_info())   
+
+
+# 38.) Write a program to create a class SecureSystem with private method for encryption and public method to send data.
+
+class SecureSystem:
+    def __encrypt_data(self,data):
+        result = data[::-1]
+        return result
+    
+    def send_data(self,data):
+        print(self.__encrypt_data(data))
+        
+ss = SecureSystem()
+ss.send_data("Zeeson")
+
