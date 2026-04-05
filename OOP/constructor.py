@@ -74,3 +74,43 @@ e1 = Example()                                # Object is created → constructo
 
 # Attribute is a variable that belongs to a class or object
 # There are two types of attributes:
+    # a.) Class Attribute (Shared) / Class Variable:
+    
+class Student:
+    college_name = "XYZ College"
+    
+# This belongs to the class itself
+# All objects share the same value 
+
+    # b.) Object Attribute / Instance Variable (Created using constructor):
+
+# self.name = name
+
+# This belongs to each object separately
+# Created inside __init__
+
+# Real-Life Analogy
+
+# Think of a college:
+# All students ---> same college name ----> class attribute
+# Each student ---> different name, age ---> object attributes
+
+# Full Example Code:
+
+class College:
+    college_name = "ABC College"    # Class Attribute
+    
+    def __init__(self,name,age,address):
+        self.Name = name                # Object Attribute
+        self.Age = age                  # Object Attribute
+        self.Address = address          # Object Attribute
+
+s1 = College("Zeeson Manandhar",22,"Koteshwor-32")
+s2 = College("Sunil Sah",23,"Jeetpur")
+
+print(s1.college_name)
+print(s2.college_name)
+
+print(s1.Name)
+print(s2.Name)
+        
