@@ -114,3 +114,60 @@ print(s2.college_name)
 print(s1.Name)
 print(s2.Name)
         
+# 4.) Passing Value to Constructor:
+
+# passing values to contructor simply means giving data at the time of object creation.
+
+# Real-Life Analogy
+# Think of creating a bank account
+# When we open an account, we provide:
+# Name
+# Balance
+# That is exactly like passing values to constructor
+
+# Simple Code Example:
+
+class Laptop:                             # Creating class
+    def __init__(self,brand):             # Constructor takes parameter brand
+        self.brand = brand                # Store value inside object
+
+l1 = Laptop("Dell")                       # What happens internally: Laptop.__init__(s1, "Zeeson") where, l1 = self and brand = Dell
+print(l1.brand)   
+
+
+# Important Concept to Remembre:
+    # -The values inside () when creating object are called Arguments.
+    # -The variables inside __init__ are called Parameters.
+
+# 5.) Multiple Attributes:
+
+# A constructor can store multiple values (attributes) inside an object
+
+# Example:
+# Think of a Student Profile
+    # Each student has:
+    # Name
+    # Age
+    # Course
+    # So one object needs multiple attributes
+    
+class Student:                                    # Creating class
+    def __init__(self,name,age,course):           # Constructor with 3 parameters
+        self.name = name                          # Store name
+        self.age = age                            # Store age
+        self.course = course                      # Store Course
+
+s1 = Student("Zeeson Manandhar",22,"Bsc.IT")
+s2 = Student("Shyam Ghale",20,"BHM")
+
+# Accessing Attributes:
+print(s1.name)
+print(s2.name)
+
+
+# Key Note To Remember:
+    # One object can store many attributes
+    # Each attribute holds different data
+
+# Important Rule:
+#  Order of arguments must match parameters
