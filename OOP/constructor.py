@@ -171,3 +171,44 @@ print(s2.name)
 
 # Important Rule:
 #  Order of arguments must match parameters
+
+# 6.) Constructor and Normal Method:
+
+# Any function inside a class other than __init__ is a Normal Method.
+
+# Example:
+def std_info(self):     
+    pass
+
+# Full Code Example:
+
+class Student:
+    def __init__(self, name):
+        self.name = name   # constructor
+
+    def display(self):
+        print(self.name)   # normal method
+
+s1 = Student("Ram Shrestha")
+s1.display()
+
+# 7.) Default Values in Constructor
+
+# We can give default values to parameters in constructor
+# So even if user does not pass value, it will still work
+
+# Basic Example:
+
+class Student:
+    def __init__(self,age,name = "Unknown"):          # name has a default value
+        self.name = name
+        self.age = age
+        
+s1 = Student(age = 22, name = "Zeeson Manandhar")     # overrides default
+print(s1.name)
+
+s2 = Student(age = 20)                                # uses default value, if no value is passed
+print(s2.name)
+
+# Important Rule:
+# Default parameters must come after normal parameters
