@@ -212,3 +212,26 @@ print(s2.name)
 
 # Important Rule:
 # Default parameters must come after normal parameters
+
+# 8.) Updating Values After Creation
+
+# After creating an object, we can change (update) its attributes
+
+# For Example:
+
+class Student:
+    def __init__(self, name):
+        self.name = name
+
+    def update_name(self, new_name):
+        self.name = new_name
+
+s1 = Student("Zeeson")
+print(s1.name)   
+s1.update_name("Sunil")
+print(s1.name)   
+
+
+# Attributes are not fixed
+#  We can change them anytime using methods
+
