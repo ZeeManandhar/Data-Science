@@ -72,18 +72,48 @@ class City:
 c1 = City("Bhaktapur")
 print(c1.city_name)
         
-
 # B) INTERMEDIATE LEVEL (8–14):
 
 # 8.) Write a class Student with a constructor that stores name and age. Add a method display() to print both.
 
-
-
+class Student:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+    def display(self):
+        print(f"Student Name = {self.name}")
+        print(f"Student Age = {self.age}")
+        
+s1 = Student("Salman Khan",30)
+s1.display()
+    
 # 9.) Write a class BankAccount with a constructor that stores name and balance. Add a method deposit(amount) to update balance.
 
+class BankAccount:
+    def __init__(self,name,balance):
+        self.name = name
+        self.balance = balance
+    def deposit(self,amount):
+        self.balance = self.balance + amount
+        return f"Your Current Balance is {self.balance}"
+    
+b1 = BankAccount("Zeeson Manandhar",5000)
+print(b1.name)
+print(b1.balance)
+print(b1.deposit(1000))
 
 # 10.) Write a class Employee with a constructor that stores name and salary. Add a method show_details() to print both.
 
+class Employee:
+    def __init__(self,name,salary):
+        self.name = name
+        self.salary = salary
+    def show_details(self):
+        print(f"Employee Name: {self.name}")
+        print(f"Salary: {self.salary} ")
+    
+e1 = Employee("Mukesh Ambani",50000000)
+e1.show_details()
 
 # 11.) Write a class Laptop with a constructor that stores brand and price. Add a method discount(amount) to reduce price.
 
