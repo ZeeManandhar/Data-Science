@@ -79,4 +79,3 @@ std1 = Student()
 print(std1.name)
 print(std1.age)
 
-# 8. 
