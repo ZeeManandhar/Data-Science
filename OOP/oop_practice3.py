@@ -117,38 +117,174 @@ e1.show_details()
 
 # 11.) Write a class Laptop with a constructor that stores brand and price. Add a method discount(amount) to reduce price.
 
+class Laptop:
+    def __init__(self,brand,price):
+        self.brand = brand
+        self.price = price
+    def discount(self,amount):
+        self.price = self.price - amount
+        print(f"Your Final Price is: {self.price}")
 
+l1 = Laptop("Nitro V16",145000)
+print(l1.brand)
+l1.discount(3000)
 
 # 12.) Write a class UserProfile with a constructor that stores username and email. Add a method change_email(new_email).
 
+class UserProfile:
+    def __init__(self,username,email):
+        self.username = username
+        self.email = email
+    def change_email(self,new_email):
+        self.email = new_email
+        
+u1 = UserProfile("ZeesonMdr1","zeeson_manandhar12@gmail.com")
+print(u1.username)
+print(u1.email)
 
+u1.change_email("Zeeson.manandhar11@gmail.com")            # Updated
+print(u1.email)              
 
 # 13.) Write a class Product with a constructor that stores name and price. Add a method increase_price(amount).
 
+class Product:
+    def __init__(self,name,price):
+        self.name = name
+        self.price = price
+    def increase_price(self,amount):
+        self.price = self.price + amount
+        print(f"Final Price: {self.price}")
+
+p1 = Product("Fan",4500)
+print(p1.name)
+print(p1.price)
+
+p1.increase_price(500)
 
 # 14.) Write a class Course with a constructor that stores course_name and duration. Add a method show_course().
 
-
+class Course:
+    def __init__(self,course_name,duration):
+        self.course_name = course_name
+        self.duration = duration
+        
+    def show_course(self):
+        print(f"Course Name: {self.course_name}")
+        print(f"Duration: {self.duration}")
+        
+c1 = Course("AI/ML", "3 Months")
+c1.show_course()
+        
 
 # C.) ADVANCED LEVEL (15–20):
 
-# Write a class Student with a constructor that stores name and marks. Add a method add_marks(extra) to increase marks.
+# 15.) Write a class Student with a constructor that stores name and marks. Add a method add_marks(extra) to increase marks.
+
+class Student:
+    def __init__(self,name,marks):
+        self.name = name
+        self.marks = marks
+    
+    def add_marks(self,extra):
+        self.marks = self.marks + extra
+
+s1 = Student("Zeeson Manandhar",75)
+print(s1.name)
+print(s1.marks)    
+
+s1.add_marks(5)
+print(s1.marks)     
+
+# 16.) Write a class BankAccount with a constructor that stores name and balance. Add two methods: deposit() and withdraw().
+
+class BankAccount:
+    def __init__(self,name,balance):
+        self.name= name
+        self.balance = balance
+    def deposit(self,amount):
+        self.balance = self.balance + amount
+        print(f"Your Latest Balance: {self.balance}")
+    def withdraw(self,amount):
+        if amount > 0 and amount <= self.balance:
+            self.balance = self.balance - amount
+            print(f"You have sucessfully withdrawn : Rs.{amount}")
+        else:
+            print("Invalid Amount!")
+            
+b1 = BankAccount("Zeeson Manandhar",6000)
+print(b1.name)
+print(b1.balance)
+
+b1.deposit(4000)       # Latest balance after deposit
+b1.withdraw(500)
+print(b1.balance)
 
 
+# 17.) Write a class Car with a constructor that stores brand and price (default price = 1000000). Create two objects (one with default price).
 
-# Write a class BankAccount with a constructor that stores name and balance. Add two methods: deposit(amount) and withdraw(amount).
+class Car:
+    def __init__(self,brand,price = 1000000):
+        self.brand = brand
+        self.price = price
 
+c1 = Car("Toyota",2000000)
+print(c1.brand)
+print(c1.price)
 
-# Write a class Car with a constructor that stores brand and price (default price = 1000000). Create two objects (one with default price).
+c2 = Car("BMW")
+print(c2.brand)
+print(c2.price)
+        
+# 18.) Write a class Employee with a constructor that stores name, salary, and department. Add a method to update salary.
 
+class Employee:
+    def __init__(self,name,salary,department):
+        self.name = name
+        self.salary = salary
+        self.department = department
+    def update_salary(self,new_salary):
+        if new_salary > 0:
+            self.salary = new_salary
+        else:
+            print("Invalid Salary!")
 
+e1 = Employee("Zeeson",25000,"Software")
+print(e1.name)
+print(e1.salary)
+print(e1.department)
 
-# Write a class Employee with a constructor that stores name, salary, and department. Add a method to update salary.
+e1.update_salary(28000)
+print(e1.salary)
 
+# 19.) Write a class User with a constructor that stores username and password. Add a method change_password(new_password).
 
+class User:
+    def __init__(self,username,password):
+        self.username = username
+        self.password = password
+    def change_password(self,new_password):
+        if self.password != new_password:
+            self.password = new_password
+            print("Password Changed Sucessfully!")
+        else:
+            print("Please Enter Different Password!")
 
-# Write a class User with a constructor that stores username and password. Add a method change_password(new_password).
+u1 = User("ZeesonGroot","Zee@@@")
+print(u1.username)
+print(u1.password)
 
+u1.change_password("Zee###")
+print(u1.password)
+        
+# 20.) Write a class LibraryBook with a constructor that stores title and author. Add a method display_info() to print both.
 
+class LibraryBook:
+    def __init__(self,title,author):
+        self.title = title
+        self.author = author
+    def display_info(self):
+        print(f"Book Title: {self.title}")
+        print(f"Book Author: {self.author}")
 
-# Write a class LibraryBook with a constructor that stores title and author. Add a method display_info() to print both.
+lb1 = LibraryBook("Think Like a Monk","Jay Shetty")
+lb1.display_info()
