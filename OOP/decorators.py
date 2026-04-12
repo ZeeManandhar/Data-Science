@@ -118,3 +118,163 @@ def middle():               # it becomes like middle = decorator(middle)
 middle()      # so now it internally becomes inner()
 
 # 4.) Structure of Decorator
+
+# Basic Structure:
+
+def my_decorator(func):
+    def inner_function():
+        func()
+    return inner_function
+
+# Breaking it into 3 Parts:
+
+# Part 1: Outer Function
+
+# def my_decorators(func):
+
+    # - This is the decorator function
+    # - It takes another function as input (func)
+    # - func = the function you want to modify
+
+# Part 2: Inner Function
+
+# def inner_function():
+
+    # This is where we add extra behavior (Change/modify)
+
+    # This function will:
+    # - run extra code
+    # - then call original function
+
+# Part 3: Call Original Function
+
+# func()
+
+    # This runs the original function
+
+    # Without this line:
+    # original function will NEVER run
+
+# Part 4: Return Inner Function
+
+# return inner_function
+
+    # - We return the modified version of function.
+    # - This replaces the original function.
+    
+# Next Simple Code Example:
+
+def decorator(func):                       # my_decorator takes a function as input. func = the function we pass i.e abc
+    def inner_func():                      # This function will modify behavior
+        for i in range(5):                 # This runs the function 5 times
+            func()                         
+    return inner_func                      # We return the modified function
+
+@decorator
+def abc():                                # Internally, it does, abc = my_decorator(abc)
+    print("This is Zeeson Manandhar!")
+
+abc()                        # Calling the function
+abc()
+
+# 5.) Manual vs @ Syntax
+
+# @decorator is just a shortcut.
+
+# Same thing can be written in 2 ways:
+
+# Method-1 : Using @ (Shortcut)
+
+@decorator
+def xyz():
+    print("Namaste! Greetings to you all")
+xyz()
+
+# Method-2: Manual Way
+def greet():
+    print("Hello From Python!")
+    
+greet = decorator(greet)
+greet()
+
+# What @decorator does?
+
+@decorator
+def efg():
+    pass
+
+# Python internally makes this:
+# efg = decorator(efg)
+
+
+# @decorator does NOT do magic
+# It just rewrites code internally
+
+# 6.) Why To Use Decorators?
+
+# Main Purpose:
+    # -To reuse code
+    # -To avoid repeating same logic again and again 
+
+# Problem Without Decorator:
+# Example:
+
+def greet():
+    print("Before")
+    print("Hello")
+    print("After")
+
+def bye():
+    print("Before")
+    print("Bye")
+    print("After")
+
+greet()
+bye()
+
+# Problem here is:
+# - "Before" and "After" repeated 
+# - Code becomes messy
+
+# Solution with Decorator:
+
+def my_decorator(func):
+    def my_inner_function():
+        print("Before!")
+        func()
+        print("After!")
+    return my_inner_function
+
+@my_decorator
+def abc():
+    print("Hello!")
+abc()    
+
+@my_decorator
+def xyz():
+    print("Bye!")
+    
+xyz()
+
+# Now:
+# - No repetition 
+# - Clean code 
+# - Easy to manage
+
+# 8.) Static Method
+
+# A static method is a function inside a class
+# But it does NOT use self
+
+# A method that belongs to a class but does not depend on object data.
+
+# Basic Example:
+
+class Student:               # Creating a class
+    @staticmethod            # @staticmethod tells Python this method does NOT need self
+    def std_info(): 
+        print("Zeeson Manandhar")              # just prints output, No object data used
+
+s1 = Student()
+s1.std_info()
+
