@@ -77,14 +77,60 @@ dashboard()
 
 # 6.) Write a program to create a decorator that checks if a user is logged in before opening profile page.
 
+is_logged = True
+
+def my_decorator(func):
+    def inner_function():
+        if is_logged == True:
+            func()
+        else:
+            print("Please Login First!")
+    return inner_function
+
+@my_decorator
+def profile():
+    print("Opening the Profile Page!")
+    
+profile()
 
 # 7.)  Write a program to create a decorator that prints execution started and ended around a payment function.
 
+def my_decorator(func):
+    def inner_func(confirmation):
+        print("Execution Started...")
+        if confirmation == True:
+            func(confirmation)
+        else:
+            print("Payment Failed!")
+        print("Execution Ended...")
+    return inner_func
 
+@my_decorator
+def payment(confirmation):
+    print("Payment Sucessful!")
+    return confirmation
+
+payment(True)
 
 # 8.) Write a program to create a decorator that repeats an order confirmation message 5 times.
 
+def my_decorator(func):
+    def inner_func(confirmation):
+        print("Program Started...!")
+        if confirmation == True:
+            for _ in range(5):
+                func(confirmation)
+        else:
+            print("Order not Confirmed!")
+    return inner_func
 
+@my_decorator
+def message(confirmation):
+    print("Order Confirmed!!!")
+    return confirmation
+
+message(True)
+        
 # 9.) Write a program to create a decorator that says Please wait... before loading a report.
 
 
@@ -111,13 +157,29 @@ dashboard()
 
 
 
-# SECTION B – STATIC METHODS (16–27)
-# Basic
-# Write a program to create a Calculator class with static method add(a,b).
-# Write a program to create a MathTools class with static method to subtract two numbers.
-# Write a program to create a Converter class with static method to convert Celsius to Fahrenheit.
-# Write a program to create a Validator class with static method to check if age is above 18.
-# Write a program to create a TextTools class with static method to count letters in a word.
+# SECTION B – STATIC METHODS (16–27):
+
+# Basic:
+
+# 16.) Write a program to create a Calculator class with static method add(a,b).
+
+
+# 17.) Write a program to create a MathTools class with static method to subtract two numbers.
+
+
+
+# 18.) Write a program to create a Converter class with static method to convert Celsius to Fahrenheit.
+
+
+
+# 19.) Write a program to create a Validator class with static method to check if age is above 18.
+
+
+
+# 20.) Write a program to create a TextTools class with static method to count letters in a word.
+
+
+
 # Intermediate
 # Write a program to create a Bank class with static method to calculate simple interest.
 # Write a program to create a Shop class with static method to calculate discount price.
