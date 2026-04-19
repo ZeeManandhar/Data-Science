@@ -1,0 +1,150 @@
+# 40 Practice Questions (Decorators & Static Methods & Abstraction)
+
+# SECTION A – DECORATORS (1–15)
+# Basic Level:
+# 1.) Write a program to create a decorator that prints Starting... before a function runs.
+
+def my_decorator(func):
+    def inner_func():
+        print("Starting...")
+        func()
+    return inner_func
+
+@my_decorator
+def state():
+    print("Function is running")
+
+state()
+
+# 2.) Write a program to create a decorator that prints Finished... after a function runs.
+
+def my_decorator(func):
+    def inner_func():
+        func()
+        print("Finished...")
+    return inner_func
+
+@my_decorator
+def new_state():
+    print("Function running!")
+    
+new_state()
+
+# 3.) Write a program to decorate a function that prints your name with Welcome before it.
+
+def my_decorators(func):
+    def inner_func(name):
+        print("Welcome!")
+        func(name)
+    return inner_func
+
+@my_decorators
+def show_name(name):
+    print(name)
+
+show_name("Zeeson Manandhar")
+
+# 4.) Write a program to create a decorator that runs a greeting function 3 times.
+
+def my_decorators(func):
+    def inner():
+        for i in range(3):
+            func()
+    return inner
+
+@my_decorators
+def greeting():
+    print("Namaste!")
+
+greeting()
+
+# 5.) Write a program to decorate a function that prints Login Successful before dashboard opens.
+
+def my_decorator(func):
+    def inner():
+        print("Login Successful")
+        func()
+    return inner
+
+@my_decorator
+def dashboard():
+    print("Dashboard Opening...")
+    
+dashboard()
+
+
+# Intermediate Level:
+
+# 6.) Write a program to create a decorator that checks if a user is logged in before opening profile page.
+
+
+# 7.)  Write a program to create a decorator that prints execution started and ended around a payment function.
+
+
+
+# 8.) Write a program to create a decorator that repeats an order confirmation message 5 times.
+
+
+# 9.) Write a program to create a decorator that says Please wait... before loading a report.
+
+
+# 10.) Write a program to create a decorator that prints date/time before running a backup function.
+
+# Advanced Level:
+
+# 11.) Write a program to create a decorator that blocks negative numbers before running a calculator function.
+
+
+# 12.) Write a program to create a decorator that asks for admin permission before deleting a file.
+
+
+
+# 13.) Write a program to create a decorator that counts how many times a function was called.
+
+
+
+# 14.) Write a program to stack two decorators on one function: one prints Before, another prints After.
+
+
+
+# 15.) Write a program to create a decorator for an ATM withdrawal function that logs every withdrawal.
+
+
+
+# SECTION B – STATIC METHODS (16–27)
+# Basic
+# Write a program to create a Calculator class with static method add(a,b).
+# Write a program to create a MathTools class with static method to subtract two numbers.
+# Write a program to create a Converter class with static method to convert Celsius to Fahrenheit.
+# Write a program to create a Validator class with static method to check if age is above 18.
+# Write a program to create a TextTools class with static method to count letters in a word.
+# Intermediate
+# Write a program to create a Bank class with static method to calculate simple interest.
+# Write a program to create a Shop class with static method to calculate discount price.
+# Write a program to create a Geometry class with static method to calculate rectangle area.
+# Write a program to create a Utility class with static method to check if a number is even.
+# Write a program to create an Exam class with static method to calculate percentage.
+# Advanced
+# Write a program to create a PasswordChecker class with static method to validate password length.
+# Write a program to create a Salary class with static method to calculate yearly salary from monthly salary.
+# SECTION C – ABSTRACTION / ABC (28–40)
+# Basic
+# Write a program to create an abstract class Animal with abstract method sound().
+# Write a program to create child classes Dog and Cat implementing sound().
+# Write a program to create abstract class Vehicle with method start().
+# Write a program to create child class Car implementing start().
+# Write a program to create abstract class Shape with abstract method area().
+# Intermediate
+# Write a program to create child classes Circle and Rectangle implementing area().
+# Write a program to create abstract class Employee with abstract method work().
+# Write a program to create child classes Manager and Developer implementing work().
+# Write a program to create abstract class Payment with abstract method pay().
+# Write a program to create child classes EsewaPayment and CardPayment.
+# Advanced
+# Write a program to create abstract class HospitalStaff with abstract method duty(), then implement Doctor and Nurse.
+# Write a program to create abstract class UniversityTeacher with abstract method teach(), then implement MathTeacher and ScienceTeacher.
+# Write a program to create abstract class DeliveryService with abstract method deliver(), then implement BikeDelivery and TruckDelivery.
+# BONUS CHALLENGE (Mix Concepts)
+# Write a program to create an abstract class User with method login(), then use a decorator to print Checking Security... before login.
+# Write a program to create a class with static method tax() and use it inside salary system.
+# Write a program to create an abstract class FoodOrder and decorate child method with order confirmation.
