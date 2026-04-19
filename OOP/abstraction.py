@@ -105,3 +105,91 @@ class Parent(ABC):                                     # This is an abstract cla
     # ABC = base class with rules
     # abstractmethod = rule inside class
     
+# 3.) Child Class Implementation
+
+# If a child class inherits an abstract class, it must implement all abstract methods.
+
+from abc import ABC, abstractmethod
+
+class Teacher(ABC):
+    
+    @abstractmethod
+    def teach(self):
+        pass
+
+# Here, Teacher says:
+# Every child must have teach()
+
+# Now for Child Classes:
+
+class Math_Teacher(Teacher):
+    def teach(self):
+        print("I teach Math!")
+
+# Creating the Object
+m1 = Math_Teacher()
+m1.teach()
+
+# here,
+# - MathTeacher followed the rule
+# - It gave real logic for teach()
+
+# Another Child Class:
+
+class English_teacher(Teacher):
+    
+    def teach(self):
+        print("Ï teach English!")
+
+e1 = English_teacher()
+e1.teach()
+
+# - Same rule, different implementation
+
+# Why This Is Powerful ?
+
+# One parent rule:
+    # teach()
+    
+# Many child versions:
+# MathTeacher ----> teaches math
+# EnglishTeacher ----> teaches english
+# ScienceTeacher ----> teaches science
+
+
+# Real-Life Analogy:
+# Parent company says: “Every branch must open at 9 AM”
+# Each branch follows rule differently:
+# Branch A style
+# Branch B style
+
+# Final Understanding
+# - Parent defines WHAT must exist
+# - Child defines HOW it works
+
+# Final Code Example:
+
+from abc import ABC, abstractmethod                         # We import abstraction tools.
+
+class Parent(ABC):                                      # Parent is an abstract class. It is used as a rule/template class.
+
+    @abstractmethod                                     # This creates a compulsory rule: Every child class must have abcmethod()
+    def abcmethod(self):
+        print("This should be a part of every child class")
+
+class Child1(Parent):                         # Child1 inherits all rules from Parent.
+
+    def abcmethod(self):                                    # Child1 implements the required rule. This is called overriding.
+        print("Abstract Method called from child class")
+
+c1 = Child1()                         # Because child implemented abstract method.
+c1.abcmethod()                       # Calling the method 
+                  
+# Important Understanding:
+# Even though Parent had code inside abcmethod, Child1 still had to override it because it was marked @abstractmethod.
+
+# Final Understanding:
+# - @abstractmethod = compulsory rule
+# - Child class must override
+# -Then object creation is allowed
+
