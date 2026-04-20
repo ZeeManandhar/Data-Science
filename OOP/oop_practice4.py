@@ -190,6 +190,8 @@ backup()
 
 # 16.) Write a program to create a Calculator class with static method add(a,b).
 
+class Calculator:
+    pass
 
 # 17.) Write a program to create a MathTools class with static method to subtract two numbers.
 
