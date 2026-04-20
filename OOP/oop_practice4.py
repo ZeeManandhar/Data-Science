@@ -133,8 +133,35 @@ message(True)
         
 # 9.) Write a program to create a decorator that says Please wait... before loading a report.
 
+def my_decorator(func):
+    def inner_func():
+        print("Please Wait...!")
+        func()
+    return inner_func
+
+@my_decorator
+def report():
+    print("Report loaded successfully!")
+
+report()
 
 # 10.) Write a program to create a decorator that prints date/time before running a backup function.
+
+from datetime import datetime
+
+def my_decorator(func):
+    def inner_func():
+        current = datetime.now()
+        print(f"Backup Started at {current}...")
+        func()
+        print("Backup Successful!")
+    return inner_func
+
+@my_decorator
+def backup():
+    print("Backing up files...")
+    
+backup()
 
 # Advanced Level:
 
