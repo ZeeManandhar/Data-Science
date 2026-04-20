@@ -167,6 +167,21 @@ backup()
 
 # 11.) Write a program to create a decorator that blocks negative numbers before running a calculator function.
 
+def my_decorator(func):
+    def inner_func(num1,num2):
+        if num1 >= 0 and num2 >= 0:
+            func(num1,num2)
+        else:
+            print("Negative Number cannot be calculated!")
+    return inner_func
+
+@my_decorator
+def calculate(num1,num2):
+    print(f"Addition : {num1+num2}")
+    print(f"Subtraction : {num1-num2}")
+    print(f"Multiplication : {num1*num2}")
+
+calculate(11,6)
 
 # 12.) Write a program to create a decorator that asks for admin permission before deleting a file.
 
@@ -271,7 +286,8 @@ class Shop:
     @staticmethod
     def check_discount(price,discount_rate):
         discount_price = (discount_rate/100) * price
-        print(f"Discount Price : {discount_price}")
+        Final_Price = price - discount_price 
+        print(f"Final Price after Discount: {Final_Price}")
 
 s1 = Shop()
 s1.check_discount(5000,5)
@@ -320,32 +336,93 @@ print(e1.calc_percentage(356,500))
 
 # 26.) Write a program to create a PasswordChecker class with static method to validate password length.
 
+class PasswordChecker:
+    
+    @staticmethod
+    def validate(password):
+        if len(password) > 6:
+            print("Strong Password!")
+        else:
+            print("Not a Strong Password! Please Try Different Password!")
 
+pc1 = PasswordChecker()
+pc1.validate("Zeeson123")
 
 
 # 27.) Write a program to create a Salary class with static method to calculate yearly salary from monthly salary.
 
+class Salary:
+    
+    @staticmethod
+    def calc_yearly_salary(salary):
+        yearly_salary = salary * 12
+        print(f"Annual Salary : Rs.{yearly_salary}")
 
+s1 = Salary()
+s1.calc_yearly_salary(50000)
+        
 
+# SECTION C – ABSTRACTION / ABC (28–40):
 
-# SECTION C – ABSTRACTION / ABC (28–40)
 # Basic
-# Write a program to create an abstract class Animal with abstract method sound().
-# Write a program to create child classes Dog and Cat implementing sound().
-# Write a program to create abstract class Vehicle with method start().
-# Write a program to create child class Car implementing start().
-# Write a program to create abstract class Shape with abstract method area().
-# Intermediate
-# Write a program to create child classes Circle and Rectangle implementing area().
-# Write a program to create abstract class Employee with abstract method work().
-# Write a program to create child classes Manager and Developer implementing work().
-# Write a program to create abstract class Payment with abstract method pay().
-# Write a program to create child classes EsewaPayment and CardPayment.
+
+# 28.) Write a program to create an abstract class Animal with abstract method sound().
+
+
+# 29.) Write a program to create child classes Dog and Cat implementing sound().
+
+
+# 30.) Write a program to create abstract class Vehicle with method start().
+
+
+
+# 31.) Write a program to create child class Car implementing start().
+
+
+
+# 32.) Write a program to create abstract class Shape with abstract method area().
+
+
+
+# Intermediate:
+
+# 33.) Write a program to create child classes Circle and Rectangle implementing area().
+
+
+# 34.) Write a program to create abstract class Employee with abstract method work().
+
+
+
+# 35.) Write a program to create child classes Manager and Developer implementing work().
+
+
+
+# 36.) Write a program to create abstract class Payment with abstract method pay().
+
+
+
+# 37.) Write a program to create child classes EsewaPayment and CardPayment.
+
+
 # Advanced
-# Write a program to create abstract class HospitalStaff with abstract method duty(), then implement Doctor and Nurse.
-# Write a program to create abstract class UniversityTeacher with abstract method teach(), then implement MathTeacher and ScienceTeacher.
-# Write a program to create abstract class DeliveryService with abstract method deliver(), then implement BikeDelivery and TruckDelivery.
-# BONUS CHALLENGE (Mix Concepts)
-# Write a program to create an abstract class User with method login(), then use a decorator to print Checking Security... before login.
-# Write a program to create a class with static method tax() and use it inside salary system.
-# Write a program to create an abstract class FoodOrder and decorate child method with order confirmation.
+
+# 38.) Write a program to create abstract class HospitalStaff with abstract method duty(), then implement Doctor and Nurse.
+
+
+# 39.)Write a program to create abstract class UniversityTeacher with abstract method teach(), then implement MathTeacher and ScienceTeacher.
+
+
+
+# 40.) Write a program to create abstract class DeliveryService with abstract method deliver(), then implement BikeDelivery and TruckDelivery.
+
+
+# BONUS CHALLENGE (Mix Concepts):
+
+# 41.) Write a program to create an abstract class User with method login(), then use a decorator to print Checking Security... before login.
+
+
+# 42.) Write a program to create a class with static method tax() and use it inside salary system.
+
+
+
+# 43.) Write a program to create an abstract class FoodOrder and decorate child method with order confirmation.
