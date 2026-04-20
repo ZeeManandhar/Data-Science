@@ -191,33 +191,99 @@ backup()
 # 16.) Write a program to create a Calculator class with static method add(a,b).
 
 class Calculator:
-    pass
+    
+    @staticmethod
+    def add(a,b):
+        return a+b
+    
+c1 = Calculator()
+print(c1.add(5,11))
+
 
 # 17.) Write a program to create a MathTools class with static method to subtract two numbers.
 
+class MathTools:
+    
+    @staticmethod
+    def subtract(a,b):
+        return a-b
 
+m1 = MathTools()
+print(m1.subtract(80,50))
 
 # 18.) Write a program to create a Converter class with static method to convert Celsius to Fahrenheit.
+# 18.) Write a program to create a Converter class with static method
+# to convert Celsius to Fahrenheit.
 
+class Converter:
+
+    @staticmethod
+    def celsius_to_fahrenheit(c):
+        return (c * 9/5) + 32
+
+print(Converter.celsius_to_fahrenheit(30))
 
 
 # 19.) Write a program to create a Validator class with static method to check if age is above 18.
+class Validator:
+    
+    @staticmethod
+    def valid(age):
+        if age > 18:
+            print("Valid Age!")
+        else:
+            print("Invalid Age!")
 
-
-
+v1 = Validator()
+v1.valid(20)
+    
 # 20.) Write a program to create a TextTools class with static method to count letters in a word.
 
+class TextTools:
+    
+    @staticmethod
+    def count(data):
+        count = 0
+        for _ in data:
+            count = count + 1
+        return count
+  
+t1 = TextTools()
+print(t1.count("Zeeson"))      
+
+# Intermediate:
+
+# 21.) Write a program to create a Bank class with static method to calculate simple interest.
 
 
-# Intermediate
-# Write a program to create a Bank class with static method to calculate simple interest.
-# Write a program to create a Shop class with static method to calculate discount price.
-# Write a program to create a Geometry class with static method to calculate rectangle area.
-# Write a program to create a Utility class with static method to check if a number is even.
-# Write a program to create an Exam class with static method to calculate percentage.
-# Advanced
-# Write a program to create a PasswordChecker class with static method to validate password length.
-# Write a program to create a Salary class with static method to calculate yearly salary from monthly salary.
+
+# 22.) Write a program to create a Shop class with static method to calculate discount price.
+
+
+
+# 23.) Write a program to create a Geometry class with static method to calculate rectangle area.
+
+
+
+# 24.) Write a program to create a Utility class with static method to check if a number is even.
+
+
+# 25.) Write a program to create an Exam class with static method to calculate percentage.
+
+
+
+# Advanced:
+
+# 26.) Write a program to create a PasswordChecker class with static method to validate password length.
+
+
+
+
+# 27.) Write a program to create a Salary class with static method to calculate yearly salary from monthly salary.
+
+
+
+
 # SECTION C – ABSTRACTION / ABC (28–40)
 # Basic
 # Write a program to create an abstract class Animal with abstract method sound().
