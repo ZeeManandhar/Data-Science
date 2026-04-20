@@ -212,8 +212,6 @@ m1 = MathTools()
 print(m1.subtract(80,50))
 
 # 18.) Write a program to create a Converter class with static method to convert Celsius to Fahrenheit.
-# 18.) Write a program to create a Converter class with static method
-# to convert Celsius to Fahrenheit.
 
 class Converter:
 
@@ -255,21 +253,67 @@ print(t1.count("Zeeson"))
 
 # 21.) Write a program to create a Bank class with static method to calculate simple interest.
 
+class Bank:
+    
+    @staticmethod
+    def calculate_interest(p,t,r):
+        si = (p*t*r)/100
+        return si
 
-
+b1 = Bank()
+print(f"The Simple Interest is {b1.calculate_interest(10000,2,6)}")
+        
+    
 # 22.) Write a program to create a Shop class with static method to calculate discount price.
 
+class Shop:
+    
+    @staticmethod
+    def check_discount(price,discount_rate):
+        discount_price = (discount_rate/100) * price
+        print(f"Discount Price : {discount_price}")
 
-
+s1 = Shop()
+s1.check_discount(5000,5)
+        
 # 23.) Write a program to create a Geometry class with static method to calculate rectangle area.
 
+class Geometry:
+    
+    @staticmethod
+    def area(length,breadth):
+       area = length * breadth 
+       print(f"The area of rectangle is {area}")
+
+g1 = Geometry()
+g1.area(6,5)
 
 
 # 24.) Write a program to create a Utility class with static method to check if a number is even.
 
+class Utility:
+    
+    @staticmethod
+    def check_even(num):
+        if num%2 == 0:
+            print("Even")
+        else:
+            print("Not Even")
+
+u1 = Utility()
+u1.check_even(23)
 
 # 25.) Write a program to create an Exam class with static method to calculate percentage.
 
+class Exam:
+    
+    @staticmethod
+    def calc_percentage(obtain_mark,total_mark):
+        total_percentage = (obtain_mark/total_mark) * 100
+        return total_percentage
+        
+e1 = Exam()
+print(e1.calc_percentage(356,500))
 
 
 # Advanced:
