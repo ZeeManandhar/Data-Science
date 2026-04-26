@@ -424,22 +424,93 @@ s1.calc_yearly_salary(50000)
 
 # 28.) Write a program to create an abstract class Animal with abstract method sound().
 
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    
+    @abstractmethod
+    def sound(self):
+        print("Animals Make Different Sounds!")
+        
+class Dog(Animal):
+    def sound(self):
+        print("bhau bhau bhau!")
+
+d1 = Dog()
+d1.sound()
 
 # 29.) Write a program to create child classes Dog and Cat implementing sound().
 
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    
+    @abstractmethod
+    def sound():
+        pass
+
+class Dog(Animal):
+    def sound(self):
+        print("Dog Barks")
+    
+class Cat(Animal):
+    def sound(self):
+        print("Cat Meows!")
+        
+d1 = Dog()
+d1.sound()
+
+c1 = Cat()
+c1.sound()
 
 # 30.) Write a program to create abstract class Vehicle with method start().
 
+from abc import ABC, abstractmethod
 
+class Vehicle(ABC):
+    @abstractmethod
+    def start(self):
+        pass
+
+class Bike(Vehicle):
+    
+    @staticmethod
+    def start():
+        print("Bike Starting on...!")
+
+b1 = Bike()
+b1.start()
 
 # 31.) Write a program to create child class Car implementing start().
 
+class Car(Vehicle):
+    
+    @staticmethod
+    def start():
+        print("Car Starting On...!")
+
+c1 = Car()
+c1.start()
 
 
 # 32.) Write a program to create abstract class Shape with abstract method area().
 
+from abc import ABC, abstractmethod
 
+class Shape(ABC):
+    
+    @abstractmethod
+    def area():
+        pass
 
+class Square(Shape):
+    @staticmethod
+    def area(length):
+        print(length**2)
+        
+s1 = Square()
+s1.area(5)
+        
 # Intermediate:
 
 # 33.) Write a program to create child classes Circle and Rectangle implementing area().
