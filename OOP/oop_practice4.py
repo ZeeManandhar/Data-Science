@@ -185,19 +185,75 @@ calculate(11,6)
 
 # 12.) Write a program to create a decorator that asks for admin permission before deleting a file.
 
+def my_decorator(func):
+    def inner_func(is_admin):
+        if is_admin == True:
+            func()
+        else:
+            print("Permission Denied!!")
+    return inner_func
 
+@my_decorator
+def delete_file():
+    print("File Deleted Sucessfully!")
+    
+delete_file(True)
 
 # 13.) Write a program to create a decorator that counts how many times a function was called.
 
+count = 0
 
+def my_decorator(func):
+    def inner_func():
+        global count
+        count += 1
+        print(f"Function called for {count} times.")
+        func()
+    return inner_func
+
+@my_decorator
+def greet():
+    print("Hello User!")
+
+greet()
+greet()
+greet()
 
 # 14.) Write a program to stack two decorators on one function: one prints Before, another prints After.
 
+def my_decorator_one(func):
+    def inner():
+        print("First Decorator!")
+        func()
+    return inner
 
+def my_decorator_two(func):
+    def inner():
+        print("Second Decorator!")
+        func()
+    return inner
+
+@my_decorator_one
+@my_decorator_two
+
+def execute():
+    print("Executed Sucessfully!")
+    
+execute()
 
 # 15.) Write a program to create a decorator for an ATM withdrawal function that logs every withdrawal.
 
+def my_decorator(func):
+    def inner(amount):
+        print(f"Transaction Log: Rs.{amount}")
+        func(amount)
+    return inner
 
+@my_decorator
+def withdraw(amount):
+    print(f"Rs.{amount} Withdrawn Successfully!")
+
+withdraw(5000)
 
 # SECTION B – STATIC METHODS (16–27):
 
