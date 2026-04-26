@@ -515,41 +515,188 @@ s1.area(5)
 
 # 33.) Write a program to create child classes Circle and Rectangle implementing area().
 
+class Circle(Shape):
+    
+    @staticmethod
+    def area(r):
+        pi = 3.14
+        print(f"Area of Circle : {pi*r**2}")
 
+c1 = Circle()
+c1.area(5)
+
+class Rectangle(Shape):
+    
+    @staticmethod
+    def area(l,b):
+        print(f"Area of Rectangle : {l*b}")
+
+r1 = Rectangle()
+r1.area(5,6)
+ 
 # 34.) Write a program to create abstract class Employee with abstract method work().
 
+from abc import ABC, abstractmethod
+
+class Employee(ABC):
+    
+    @abstractmethod
+    def work(self):
+        pass
 
 
 # 35.) Write a program to create child classes Manager and Developer implementing work().
 
+class Manager(Employee): 
+    def work(self):
+        print("Manager manages all the work!")
+
+m1 = Manager()
+m1.work()
+
+class Developer(Employee):
+    def work(self):
+        print("Developer writes the code and tests it!")
+
+d1 = Developer()
+d1.work()
 
 
 # 36.) Write a program to create abstract class Payment with abstract method pay().
 
+from abc import ABC, abstractmethod
 
+class Payment(ABC):
+    @abstractmethod
+    def pay(self):
+        pass
 
 # 37.) Write a program to create child classes EsewaPayment and CardPayment.
 
+class EsewaPayment(Payment):
+    def pay(self):
+        print("Payment Done through Esewa...!")
 
-# Advanced
+ep = EsewaPayment()
+ep.pay()
+
+class CardPayment(Payment):
+    def pay(self):
+        print("Payment Done Through Cash...!")
+
+cp = CardPayment()
+cp.pay()
+
+# Advanced:
 
 # 38.) Write a program to create abstract class HospitalStaff with abstract method duty(), then implement Doctor and Nurse.
 
+from abc import ABC, abstractmethod
+
+class HospitalStaff(ABC):
+    @abstractmethod
+    def duty(self):
+        pass
+
+class Doctor(HospitalStaff):
+    def duty(self):
+        print("Diagnosing and treating the patient.")
+
+d1 = Doctor()
+d1.duty()
+
+
+class Nurse(HospitalStaff):
+    def duty(self):
+        print("Caring for patients, communicating with doctors and administering medicine.")
+
+n1 = Nurse()
+n1.duty()
 
 # 39.)Write a program to create abstract class UniversityTeacher with abstract method teach(), then implement MathTeacher and ScienceTeacher.
 
+from abc import ABC, abstractmethod
 
+class UniversityTeacher(ABC):
+    
+    @abstractmethod
+    def teach(self):
+        pass
 
+class MathTeacher(UniversityTeacher):
+    
+    def teach(self):
+        print("Teaches Math...!")
+
+m1 = MathTeacher()
+m1.teach()
+
+class ScienceTeacher(UniversityTeacher):
+    
+    def teach(self):
+        print("Teaches Science...!")
+
+s1 = ScienceTeacher()
+s1.teach()
+    
 # 40.) Write a program to create abstract class DeliveryService with abstract method deliver(), then implement BikeDelivery and TruckDelivery.
 
+class DeliveryService(ABC):
+    
+    @abstractmethod
+    def deliver(self):
+        pass
+
+class BikeDelivery(DeliveryService):
+    def deliver(self):
+        print("Delivery Done Through Bike.")
+
+bd = BikeDelivery()
+bd.deliver()
+
+class TruckDelivery(DeliveryService):
+    def deliver(self):
+        print("Delivery Done Through Truck.")
+
+td = TruckDelivery()
+td.deliver()
 
 # BONUS CHALLENGE (Mix Concepts):
 
 # 41.) Write a program to create an abstract class User with method login(), then use a decorator to print Checking Security... before login.
 
+def my_decorator(func):
+    def inner_function(self):
+        print("Checking Security...!")
+        func(self)
+    return inner_function
+
+class User(ABC):
+    
+    @abstractmethod
+    def login(self):
+        pass
+
+class AdminUser(User):
+    @my_decorator
+    def login(self):
+        print("Login Successful!")
+
+au = AdminUser()
+au.login()
 
 # 42.) Write a program to create a class with static method tax() and use it inside salary system.
 
+class TaxSystem:
+    
+    @staticmethod
+    def tax(salary,tax_rate):
+        tax = (salary*tax_rate)/100
+        print(f"Tax Amount : {tax}")
+        final_salary = salary - tax
+        print(f"Salary After Tax Deduction : {final_salary}")
+
+t1 = TaxSystem()
+t1.tax(50000,1)
 
 
-# 43.) Write a program to create an abstract class FoodOrder and decorate child method with order confirmation.
