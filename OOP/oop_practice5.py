@@ -3,15 +3,123 @@
 # BASIC (1–10):
 
 # 1.) Write a program with two classes Cat and Dog, both having method sound() printing different outputs.
+
+class Cat:
+    name = "Cat Class"
+    def sound(self):
+        print("Cat Sleeps!")
+
+class Dog:
+    name = "Dog Class"
+    def sound(self):
+        print("Dog Sleeps!")
+        
+c1 = Cat()
+c1.sound()
+
+d1 = Dog()
+d1.sound()
+
 # 2.) Write a program with classes Car and Bike, both having start() method.
+
+class Car:
+    name = "Car Class"
+    @staticmethod
+    def start():
+        print("Car is Starting...!")
+
+class Bike:
+    name = "Bike Class"
+    @staticmethod
+    def start():
+        print("Bike is Starting...!")
+
 # 3.) Write a program with classes Teacher and Student, both having role() method.
+
+class Teacher:
+    name = "Teacher Class"
+    def role(self):
+        print("Teacher teaches...!")
+
+class Student:
+    name = "Student Class!"
+    def role(self):
+        print("Student learns...!")
+
+t1 = Teacher()
+t1.role()
+
+s1 = Student()
+s1.role()
+
 # 4.) Write a program with classes Apple and Banana, both having color() method.
+
+class Apple:
+    @staticmethod
+    def color():
+        print("Color of Apple is Red!")
+
+class Banana:
+    @staticmethod
+    def color():
+        print("Color of banana is Yellow!")
+        
+a1 = Apple()
+a1.color()
+
+b1 = Banana()
+b1.color()
+
 # 5.) Write a program with classes Pen and Pencil, both having write() method.
+
+class Pen:
+    def write(self):
+        print("Writing with Pen...!")
+
+class Pencil:
+    def write(self):
+        print("Writing with Pencil...!")
+
+p1 = Pen()
+p1.write()
+
+p2 = Pencil()
+p2.write()
+
 # 6.) Write a program with classes Mobile and Laptop, both having power_on() method.
+
+class Mobile:
+    name = "Mobile Class"
+    def power_on(self):
+        print("Mobile Turning On...!")
+
+class Laptop:
+    name = "Laptop Class"
+    def power_on(self):
+        print("Laptop Turning On...!")
+
+mob = Mobile()
+mob.power_on()
+
+lap = Laptop()
+lap.power_on()
+
+
 # 7.) Write a program with classes Lion and Elephant, both having eat() method.
+
+
+
 # 8.) Write a program with classes Singer and Dancer, both having perform() method.
+
+
+
 # 9.) Write a program with classes Clock and Watch, both having show_time() method.
+
+
+
 # 10.) Write a program with classes Fan and AC, both having turn_on() method.
+
+
 
 # INTERMEDIATE (11–20):
 
