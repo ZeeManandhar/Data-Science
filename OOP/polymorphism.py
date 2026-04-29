@@ -109,3 +109,26 @@ for x in [Dog(),Boy()]:
 # Output:
 # Dogs eat Bone!
 
+
+# Inheritance Polymorphism (Method Overriding):
+
+# Here, We Use Inheritance with Polymorphism
+
+# Code Example with Explanation:
+
+class Animal:                                       # Base class (parent).
+    name = "Main Class"                             # Class Attribute
+    def eat(self):                                  # Method Name
+        print("Animals eat food!")                  # Default behavior.
+        
+class Dog(Animal):                                 # Child Class where Dog inherits from Animal.
+    
+    def eat(self):                                # Same Method Name Again, i.e. Method Overriding
+        print("Dog eats Bone!")                   # Dog gives its own behavior.
+        
+
+d1 = Dog()
+d1.eat()
+print(d1.name)
+
+
