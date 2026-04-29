@@ -126,9 +126,48 @@ class Dog(Animal):                                 # Child Class where Dog inher
     def eat(self):                                # Same Method Name Again, i.e. Method Overriding
         print("Dog eats Bone!")                   # Dog gives its own behavior.
         
-
+# Now Object
 d1 = Dog()
 d1.eat()
 print(d1.name)
 
+# So, here:
+# Python checks:
+# Dog has its own eat(), if YES
+# So it uses Dog’s method
+
+# If Dog DID NOT have sound():
+# Then Python would go to parent:
+# Animal ----> eat()
+
+# Key Idea:
+
+# Same method:
+# sound()
+
+# Different behavior:
+# Animal ----> "Animals eat food1"
+# Dog -------> "Dogs eat bone!"
+
+# This is polymorphism using inheritance.
+
+
+# Built-In Polymorphism:
+
+# Polymorphism is not only in classes.
+# Python already uses it in built-in functions and operators.
+
+# Example One:
+
+len("Zeeson")
+len([2,0,6,0])
+
+# Explanation:
+# here,
+# "Hi" has length of 2.
+# [1, 2, 3] has length length of 3.
+
+# We know, we have used same function:
+# len()
+# thus, it shows different behavior depending on data. this is called polymorphism.
 
