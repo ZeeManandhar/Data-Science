@@ -7,12 +7,12 @@
 class Cat:
     name = "Cat Class"
     def sound(self):
-        print("Cat Sleeps!")
+        print("Cat Meows!")
 
 class Dog:
     name = "Dog Class"
     def sound(self):
-        print("Dog Sleeps!")
+        print("Dog Barks!")
         
 c1 = Cat()
 c1.sound()
@@ -33,6 +33,12 @@ class Bike:
     @staticmethod
     def start():
         print("Bike is Starting...!")
+        
+c1 = Car()
+c1.start()
+
+b1 = Bike()
+b1.start()
 
 # 3.) Write a program with classes Teacher and Student, both having role() method.
 
@@ -107,17 +113,71 @@ lap.power_on()
 
 # 7.) Write a program with classes Lion and Elephant, both having eat() method.
 
+class Lion:
+    @staticmethod
+    def eat():
+        print("Lions eat flesh")
 
+class Elephant:
+    @staticmethod
+    def eat():
+        print("Elephant eat herbs and grasses")
+        
+l1 = Lion()
+l1.eat()
+
+e1 = Elephant()
+e1.eat()  
 
 # 8.) Write a program with classes Singer and Dancer, both having perform() method.
 
+class Singer:
+    def perform(self):
+        print("Singer sings!")
 
+class Dancer:
+    def perform(self):
+        print("Dancer dances!")
+
+s1 = Singer()
+s1.perform()
+
+d1 = Dancer()
+d1.perform()
 
 # 9.) Write a program with classes Clock and Watch, both having show_time() method.
 
+class Clock:
+    @staticmethod
+    def show_time():
+        print("Clock Showing Time!")
 
+class Watch:
+    @staticmethod
+    def show_time():
+        print("Watch Showing Time!")
+
+c1 = Clock()
+c1.show_time()
+
+w1 = Watch()
+w1.show_time()        
 
 # 10.) Write a program with classes Fan and AC, both having turn_on() method.
+
+class Fan:
+    def turn_on(self):
+        print("Turning On the Fan!")
+
+class AC:
+    def turn_on(self):
+        print("Turning On the AC!")
+
+f1 = Fan()
+f1.turn_on()
+
+a1 = AC()
+a1.turn_on()
 
 
 
