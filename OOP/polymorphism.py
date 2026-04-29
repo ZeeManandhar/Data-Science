@@ -171,3 +171,81 @@ len([2,0,6,0])
 # len()
 # thus, it shows different behavior depending on data. this is called polymorphism.
 
+# Next Example:
+
+# Using '+' Operator:
+
+print(5+3)
+print("Hello"+"User")
+
+# Here, In this Example as well, we used same '+' operator but it showed different behaviour. Hence, this is considered as Polymorphism.
+
+# Key Concept to Understand:
+    # - Same function/operator
+    # -  Different types
+    #  - Different results
+    
+# This is polymorphism.
+
+# Duck Typing:
+# This is a special concept in Python polymorphism.
+
+# Python does NOT check type
+# Python checks behavior (method)
+
+# Code Example:
+
+class Bird:
+    
+    def fly(self):
+        print("Bird is Flying!")
+
+class Plane:
+    
+    def fly(self):
+        print("Plane is Flying!")
+        
+# Creating Objects of Both classes:
+
+b1 = Bird()
+b1.fly()
+
+p1 = Plane()
+p1.fly()
+
+# Important Observation Here:
+
+# Both classes have:
+# fly()
+
+# But:
+# Bird is not Plane
+# Plane is not Bird
+
+# Still both work.
+
+# Why?
+# Python only checks:
+# Does object have fly() method?
+# If YES then run it
+# If NO then throw error
+
+# That’s Duck Typing
+
+# “If it behaves like a duck, treat it like a duck.”
+# Meaning:
+    # Not important what it is
+    # Important what it can do
+
+# Real-Life Analogy
+
+# we press play()
+
+# Phone ---> plays music
+# TV -----> plays video
+# Laptop ----> plays movie
+
+# we don’t care device type and what it is.
+# we only care: does it support play()?
+
+
