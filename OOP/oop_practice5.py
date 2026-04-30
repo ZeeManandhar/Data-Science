@@ -267,10 +267,66 @@ for x in [Boy(),Dog(),Cow()]:
     x.eat()
 
 # 16.) Write a program with Employee and child classes Manager, Developer using work().
+
+class Employee:
+    def work(self):
+        pass
+
+class Manager(Employee):
+    def work(self):
+        print("Manager manages and supervise all the work!")
+        
+class Developer(Employee):
+    def work(self):
+        print("Developer writes and tests the code!")
+
+m1 = Manager()
+m1.work()
+
+d1 = Developer()
+d1.work()
+    
 # 17.) Write a program where different classes Bird, Plane use same method fly() (duck typing).
+
+class Bird:
+    def fly(self):
+        print("Bird is Flying...!")
+class Plane:
+    def fly(self):
+        print("Plane is Flying...!")
+
+b1 = Bird()
+b1.fly()
+
+p1 = Plane()
+p1.fly()
+
 # 18.) Write a program to demonstrate built-in polymorphism using len() on string and list.
+
+print(len("Namaste!!"))
+print(len(["apple","mango","litchi"]))
+
 # 19.) Write a program to demonstrate + operator with numbers and strings.
+
+print(5+3)
+print("Hello" + "Zeeson")
+
 # 20.) Write a program where list contains mixed objects (Car, Dog, Human) and all use move().
+
+class Car:
+    def move(self):
+        print("Car Moves!")
+
+class Dog:
+    def move(self):
+        print("Dog Moves!")
+
+class Human:
+    def move(self):
+        print("Human Moves!")
+
+for x in [Car(),Dog(),Human()]:
+    x.move()
 
 # ADVANCED (21–30):
 
