@@ -331,7 +331,37 @@ for x in [Car(),Dog(),Human()]:
 # ADVANCED (21–30):
 
 # 21.) Write a program with abstract class Animal having sound() and implement in Dog, Cat.
-# 22.) Write a program where method overriding happens in Shape → Rectangle → Square.
+
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    
+    @abstractmethod
+    def sound(self):
+        pass
+
+class Dog(Animal):
+    
+    def sound(self):
+        print("Dog is Barking!")
+
+class Cat(Animal):
+    
+    def sound(self):
+        print("Cat Meowing!")
+
+c1 = Cat()
+c1.sound()
+
+d1 = Dog()
+d1.sound()
+
+# 22.) Write a program where method overriding happens in Shape ---> Rectangle ----> Square.
+
+class Shape:
+    def area(self):
+        pass
+
 # 23.) Write a program showing runtime polymorphism using BankAccount → SavingsAccount with interest().
 # 24.) Write a program using duck typing where Duck, Robot both have walk().
 # 25.) Write a program where Payment class has method pay() overridden by Cash, Card, UPI.
