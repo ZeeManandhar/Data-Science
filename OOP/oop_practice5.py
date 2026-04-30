@@ -184,10 +184,88 @@ a1.turn_on()
 # INTERMEDIATE (11–20):
 
 # 11.) Write a program to create a list of objects (Dog, Cat) and call sound() using loop.
+
+class Dog:
+    def sound(self):
+        print("Dogs Bark!")
+        
+class Cat:
+    def sound(self):
+        print("Cats Meow!")
+        
+
+for i in [Dog(),Cat()]:
+    i.sound()
+
 # 12.) Write a program with Vehicle and child class Car overriding move() method.
-# 13.) Write a program with Animal → Dog → Puppy and override sound() in each.
+
+class Vehicle:
+    def move(self):
+        print("Vehicle is Moving...!")
+
+class Car(Vehicle):
+    def move(self):
+        print("Car is Moving...!")
+    
+c1 = Car()
+c1.move()
+
+# 13.) Write a program with Animal ---> Dog ---> Puppy and override sound() in each.
+
+class Animal:
+    def sound(self):
+        print("Animal Makes Sound!")
+
+class Dog(Animal):
+    def sound(self):
+        print("Dogs Bark!")
+
+class Puppy(Dog):
+    def sound(self):
+        print("Puppies Barks too!")
+
+p1 = Puppy()
+p1.sound()
+
+
 # 14.) Write a program with Shape and child classes Circle and Square, each having area().
+
+class Shape:
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def area(self):
+        print("The Area of Circle is pi*r**2.")
+
+class Square(Shape):
+    def area(self):
+        print("The Area of Square is l**2.")
+    
+c1 = Circle()
+c1.area()
+
+s1 = Square()
+s1.area()
+
+
 # 15.) Write a program using loop polymorphism with Boy, Dog, Cow using eat().
+
+class Boy:
+    def eat(self):
+        print("Boy eats Pizza.")
+
+class Dog:
+    def eat(self):
+        print("Dog eats Bone.")
+
+class Cow:
+    def eat(self):
+        print("Cow eats Grass.")
+
+for x in [Boy(),Dog(),Cow()]:
+    x.eat()
+
 # 16.) Write a program with Employee and child classes Manager, Developer using work().
 # 17.) Write a program where different classes Bird, Plane use same method fly() (duck typing).
 # 18.) Write a program to demonstrate built-in polymorphism using len() on string and list.
