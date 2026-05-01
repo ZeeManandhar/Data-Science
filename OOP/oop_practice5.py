@@ -328,7 +328,7 @@ class Human:
 for x in [Car(),Dog(),Human()]:
     x.move()
 
-# ADVANCED (21–30):
+# ADVANCED (21–29):
 
 # 21.) Write a program with abstract class Animal having sound() and implement in Dog, Cat.
 
@@ -366,7 +366,7 @@ class Rectangle(Shape):
     def area(self):
         print("Area of Rectangle: length*breadth")
         
-class Square(Shape):
+class Square(Rectangle):
     def area(self):
         print("Area of Square: length**2")
 
@@ -389,11 +389,24 @@ class SavingsAccount(BankAccount):
 s1 = SavingsAccount()
 s1.interest()
 
+b1 = BankAccount()
+b1.interest()
  
 # 24.) Write a program using duck typing where Duck, Robot both have walk().
 
+class Duck:
+    def walk(self):
+        print("Duck is walking")
 
+class Robot:
+    def walk(self):
+        print("Robot is walking")
 
+def move(x):
+    x.walk()
+
+move(Duck())
+move(Robot())
 
 # 25.) Write a program where Payment class has method pay() overridden by Cash, Card, UPI.
 
@@ -441,24 +454,45 @@ class Drum:
     def play(self):
         print("Playing Drum!")
 
-g1 = Guitar()
-g1.play()
-
-p1 = Piano()
-p1.play()
-
-d1 = Drum()
-d1.play()
-
+for x in [Guitar(),Piano(),Drum()]:
+    x.play()
+    
+    
 # 27.) Write a program showing polymorphism in function arguments (pass different objects with same method).
 
+class Dog:
+    def speak(self):
+        print("Dog barks")
+
+class Cat:
+    def speak(self):
+        print("Cat meows")
+
+
+def action(x):
+    x.speak()
+
+action(Dog())
+action(Cat())
 
 
 # 28.) Write a program where Person, Robot both have work() and are used in same loop.
 
+class Person:
+    def work(self):
+        print("person is working...!")
+
+class Robot:
+    def work(self):
+        print("robot is working...!")
+
+for i in [Person(),Robot()]:
+    i.work()
 
 # 29.) Write a program using built-in polymorphism with * operator (number vs string).
 
+print(6*3)
+print("Zeeson"*6)
 
 
-# 30.) Write a program combining inheritance + overriding + loop polymorphism in one example.
+
