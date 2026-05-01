@@ -361,12 +361,104 @@ d1.sound()
 class Shape:
     def area(self):
         pass
+    
+class Rectangle(Shape):
+    def area(self):
+        print("Area of Rectangle: length*breadth")
+        
+class Square(Shape):
+    def area(self):
+        print("Area of Square: length**2")
 
-# 23.) Write a program showing runtime polymorphism using BankAccount → SavingsAccount with interest().
+r1 = Rectangle()
+r1.area()
+
+s1 = Square()
+s1.area()
+
+# 23.) Write a program showing runtime polymorphism using BankAccount ---> SavingsAccount with interest().
+
+class BankAccount:
+    def interest(self):
+        print("BankAccount gives 5% interest")
+        
+class SavingsAccount(BankAccount):
+    def interest(self):
+        print("SavingsAccount gives 10% interest")
+ 
+s1 = SavingsAccount()
+s1.interest()
+
+ 
 # 24.) Write a program using duck typing where Duck, Robot both have walk().
+
+
+
+
 # 25.) Write a program where Payment class has method pay() overridden by Cash, Card, UPI.
+
+class Payment:
+    
+    def pay(self):
+        print("Payment Done!")
+
+class Cash(Payment):
+    def pay(self):
+        print("Payment Done Through Cash...!")
+        
+class Card(Payment):
+    def pay(self):
+        print("Payment Done Through Card...!")
+        
+class UPI(Payment):
+    
+    def pay(self):
+        print("Payment Done through UPI...!")
+
+c1 = Cash()
+c1.pay()
+
+crd1 = Card()
+crd1.pay()
+
+u1 = UPI()
+u1.pay()
+
 # 26.) Write a program using loop to call play() for objects Guitar, Piano, Drum.
+
+class Guitar:
+    
+    def play(self):
+        print("Playing Guitar!")
+
+class Piano:
+    
+    def play(self):
+        print("Playing Piano!")
+
+class Drum:
+    
+    def play(self):
+        print("Playing Drum!")
+
+g1 = Guitar()
+g1.play()
+
+p1 = Piano()
+p1.play()
+
+d1 = Drum()
+d1.play()
+
 # 27.) Write a program showing polymorphism in function arguments (pass different objects with same method).
+
+
+
 # 28.) Write a program where Person, Robot both have work() and are used in same loop.
+
+
 # 29.) Write a program using built-in polymorphism with * operator (number vs string).
+
+
+
 # 30.) Write a program combining inheritance + overriding + loop polymorphism in one example.
