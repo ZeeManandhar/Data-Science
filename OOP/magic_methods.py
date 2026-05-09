@@ -95,3 +95,57 @@ print(c1)
 
 # So Python shows default object information.
 
+# Now, 
+
+# Simple Code Example using __str__():
+
+class Car:                         # Created Car class.
+    
+    def __str__(self):             # Magic method for string representation. Python automatically calls this during printing.
+        return "Toyota"           # Return text to Python. __str__ MUST return a string.
+
+c1 = Car()
+print(c1)                    # Python internally does print(s1.__str__())
+
+# Python expects:
+# a string value
+# from __str__. , That's why return is important.
+
+# Example without return in __str__():
+
+# class Student:
+
+#     def __str__(self):
+#         print("hello")
+
+# s1 = Student()
+# print(s1)
+
+# This Gives Error! 
+
+# 4.) Understanding __len__:
+    
+# Its job is:
+# To Make custom objects work with len()
+
+
+# Now Custom Object
+
+# Example Without __len__:
+
+# class Student:
+#     pass
+
+# s1 = Student()
+# print(len(s1))               # This throws TypeError.
+
+# Example using __len__():
+
+class Student:
+
+    def __len__(self):
+        return 5
+
+s1 = Student()
+print(len(s1))
+
