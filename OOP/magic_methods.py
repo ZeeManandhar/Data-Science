@@ -188,3 +188,93 @@ n2 = Number(3)
 
 print(n1 + n2)                            # n1.__add__(n2)
 
+
+a = 5
+b = 10 
+c = 6
+print(a.__add__(b).__add__(c))
+
+
+# 6. Built-in Operators & Magic Methods Mapping
+
+# Python converts normal operations into magic method calls internally.
+
+# Main Concept
+
+# We write a NORMAL code and Python secretly converts it into:
+# magic method calls automatically.
+
+# Example 1 using "+":
+
+# We write:
+a + b
+
+# Python internally does:
+
+print(a.__add__(b))
+
+# Example 2 using "-"
+
+# We write:
+a - b
+
+# Python internally:
+
+print(a.__sub__(b))
+
+
+# Example 3 using "*"
+
+# We write:
+a * b
+
+# Python internally:
+
+print(a.__mul__(b))
+
+# Example 4 using len()
+
+# We write:
+# len(obj)
+
+# Python internally:
+
+# obj.__len__()
+
+
+# THIS IS THE REAL MAGIC
+
+# Python makes code look:
+# simple and human-friendly
+
+# But internally it runs:
+# special magic methods
+
+
+# 7.) Operator Overloading
+
+# This is the BIG main concept behind magic methods.
+
+# Very simple definition: Same operator behaving differently for different objects.
+
+
+# Example 1 — Numbers:
+
+print(5 + 3)
+
+# Output:
+# 8
+
+# Here "+" means:
+# addition
+
+# Example 2 — Strings:
+
+print("Hi " + "Bro")
+
+# Output:
+# Hi Bro
+
+# Here same "+" means:
+# joining strings
+
