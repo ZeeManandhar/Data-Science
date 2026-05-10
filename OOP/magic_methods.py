@@ -147,5 +147,44 @@ class Student:
         return 5
 
 s1 = Student()
-print(len(s1))
+print(s1.__len__())
+
+
+# 5.) Understanding __add__
+
+# __add__ is a magic method.
+
+# Its job is to control what happens when + is used
+# This is called Operator Overloading.
+
+
+# Now Custom Object
+
+# Example Without __add__:
+
+# class Number:
+#     pass
+
+# n1 = Number()
+# n2 = Number()
+
+# print(n1 + n2)
+
+# This Gives Error!. because python doesnot know how to add these object as its class has no __add__.
+
+
+# Solution using __add__:
+
+class Number:
+
+    def __init__(self, value):
+        self.value = value
+
+    def __add__(self, other):
+        return self.value + other.value
+
+n1 = Number(5)
+n2 = Number(3)
+
+print(n1 + n2)                            # n1.__add__(n2)
 
