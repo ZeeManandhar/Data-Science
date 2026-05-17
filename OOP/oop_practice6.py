@@ -131,26 +131,93 @@ print(i1*i2)
 
 # 11.)  Write a program to create a class Book using __str__ to display book name and __len__ to return total pages.
 
+class Book:
+    
+    def __str__(self):
+        return "Python Programming(2026)"
+    
+    def __len__(self):
+        return 215
 
+b1 = Book()
+print(f"Book Name : {b1}")
+print(f"Total Pages : {len(b1)}")
 
 
 # 12.)  Write a program to create a class BankAccount and overload + operator to add balances of two accounts.
 
+class BankAccount:
+    
+    def __init__(self,value):
+        self.value = value
+    
+    def __add__(self, other):
+        return self.value + other.value
+
+b1 = BankAccount(5000)
+b2 = BankAccount(4000)
+
+print(b1 + b2)
+
 # 13.)  Write a program to create a class Distance and overload - operator to subtract distances.
+
+class Distance:
+    
+    def __init__(self,value):
+        self.value = value
+        
+    def __sub__(self, other):
+        return self.value - other.value
+    
+d1 = Distance(15)
+d2 = Distance(9)
+
+print(d1-d2)
+
 
 # 14.)  Write a program to create a class Product and overload * operator to multiply quantity and price.
 
+class Product:
+    pass
+
+
+
 # 15.)  Write a program to create a class Sentence and use __len__ to return total characters in a sentence.
+
+
+
 
 # 16.)  Write a program to create a class Movie and use __str__ to display movie title.
 
+
+
+
+
 # 17.)  Write a program to create a class Salary and overload + operator to add salaries of two employees.
+
+
+
+
+
 
 # 18.)  Write a program to create a class Temperature and overload - operator to find temperature difference.
 
+
+
+
+
 # 19.)  Write a program to create a class Vector and overload + operator to add vector values.
 
+
+
+
+
+
 # 20.)  Write a program to create a class ShoppingCart and use __len__ to return total items in cart.
+
+
+
+
 
 
 # ADVANCED LEVEL (21–30)
