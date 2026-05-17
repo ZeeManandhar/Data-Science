@@ -278,20 +278,143 @@ print(len(sc1))
 
 # 21.)  Write a program to create a class Student and overload + operator to add marks of two students.
 
+class Student:
+    
+    def __init__(self,marks):
+        self.marks = marks
+    
+    def __add__(self, other):
+        return self.marks + other.marks
+
+s1 = Student(85)
+s2 = Student(90)
+
+print(s1 + s2)
+    
 # 22.)  Write a program to create a class BankAccount and overload + operator to combine account balances and return a new object.
+
+class BankAccount:
+    
+    def __init__(self,balance):
+        self.balance = balance
+    
+    def __add__(self, other):
+        combine_balance = self.balance + other.balance
+        return combine_balance
+
+ba1 = BankAccount(500000)
+ba2 = BankAccount(20000)
+
+print(ba1+ba2)
+
 
 # 23.)  Write a program to create a class Vector and overload +, -, and * operators.
 
+class Vector:
+    
+    def __init__(self,value):
+        self.value = value
+    
+    def __add__(self, other):
+        return self.value + other.value
+    
+    def __sub__(self, other):
+        return self.value - other.value
+    
+    def __mul__(self, other):
+        return self.value * other.value
+
+v1 = Vector(75)
+v2 = Vector(60)
+
+print(v1 + v2)
+print(v1 - v2)
+print(v1 * v2)
+  
+
 # 24.)  Write a program to create a class Library and use __len__ to return total books.
+
+class Library:
+    
+    def __init__(self,total):
+        self.total = total
+    
+    def __len__(self):
+        return self.total
+
+l1 = Library(50)
+print(len(l1))
+
 
 # 25.)  Write a program to create a class Employee and use __str__ to display employee details.
 
-# 26.)  Write a program to create a class Calculator and overload arithmetic operators for custom objects.
+class Employee:
+    
+    def __init__(self,name,age,salary):
+        self.name = name
+        self.age = age
+        self.salary = salary
+        
+    def __str__(self):
+        return f"Name: {self.name}, Age: {self.age}, Salary: {self.salary}"
 
-# 27.)  Write a program to create a class Wallet and overload + operator to combine money from multiple wallet objects.
+e1 = Employee("Zeeson Manandhar",22,50000)
+print(e1)
 
-# 28.)  Write a program to create a class CartItem and overload * operator to calculate total price using quantity and rate.
 
-# 29.)  Write a program to create a class Team and use __len__ to return total players in team.
 
-# 30.)  Write a program to create a class Result and combine polymorphism with magic methods by overloading operators differently for different objects.
+# 26.)  Write a program to create a class Wallet and overload + operator to combine money from multiple wallet objects.
+
+class Wallet:
+    
+    def __init__(self,money):
+        self.money = money
+    
+    def __add__(self, other):
+        return self.money + other.money
+
+w1 = Wallet(500)
+w2 = Wallet(1000)
+
+print(w1 + w2)
+
+
+# 27.)  Write a program to create a class Team and use __len__ to return total players in team.
+
+class Team:
+    
+    def __init__(self,total):
+        self.total = total
+    
+    def __len__(self):
+        return self.total
+
+t1 = Team(82)
+print(len(t1))
+        
+
+# 28.)  Write a program to create a class Result and combine polymorphism with magic methods by overloading operators differently for different objects.
+
+class Result:
+
+    def __init__(self, value):
+        self.value = value
+
+    def __add__(self, other):
+        if type(self.value) == int:
+            return self.value + other.value
+        
+        elif type(self.value) == str:
+            return self.value + " " + other.value
+
+
+r1 = Result(50)
+r2 = Result(40)
+
+print(r1 + r2)
+
+
+r3 = Result("Pass")
+r4 = Result("Result")
+
+print(r3 + r4)
