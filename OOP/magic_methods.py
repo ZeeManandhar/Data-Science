@@ -278,3 +278,7 @@ print("Hi " + "Bro")
 # Here same "+" means:
 # joining strings
 
+
+# Same operator:
+# "+"
+# Different behavior. This is Operator Overloading.
