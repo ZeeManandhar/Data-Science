@@ -178,46 +178,99 @@ print(d1-d2)
 # 14.)  Write a program to create a class Product and overload * operator to multiply quantity and price.
 
 class Product:
-    pass
+    def __init__(self,amount):
+        self.amount = amount
+    
+    def __mul__(self, other):
+        return self.amount * other.amount
 
+p1 = Product(50)
+p2 = Product(20)
 
+print(p1*p2)
 
 # 15.)  Write a program to create a class Sentence and use __len__ to return total characters in a sentence.
 
+class Sentence:
+    def __init__(self,words):
+        self.words =  words
+    
+    def __len__(self):
+        return len(self.words)
 
+s1 = Sentence("I am a Data Scientist!")
+print(len(s1))
 
 
 # 16.)  Write a program to create a class Movie and use __str__ to display movie title.
 
+class Movie:
+    def __init__(self,title):
+        self.title = title
+    
+    def __str__(self):
+        return self.title
 
-
-
+m1 = Movie("Machine Learning(2025)")
+print(m1)
 
 # 17.)  Write a program to create a class Salary and overload + operator to add salaries of two employees.
 
+class Salary:
+    def __init__(self,salary):
+        self.salary = salary
+    
+    def __add__(self, other):
+        return self.salary + other.salary
 
+s1 = Salary(45000)
+s2 = Salary(40000)
 
-
-
+print(s1+s2)
 
 # 18.)  Write a program to create a class Temperature and overload - operator to find temperature difference.
 
+class Temperature:
+    
+    def __init__(self,temp):
+        self.temp = temp 
+    
+    def __sub__(self, other):
+        return self.temp - other.temp
 
+t1 = Temperature(89)
+t2 = Temperature(60)
 
-
+print(t1 - t2)
 
 # 19.)  Write a program to create a class Vector and overload + operator to add vector values.
 
+class Vector:
+    
+    def __init__(self, value):
+        self.value = value
+    
+    def __add__(self, other):
+        return self.value + other.value
 
+v1 = Vector(10)
+v2 = Vector(20)
 
-
-
+print(v1 + v2)
 
 # 20.)  Write a program to create a class ShoppingCart and use __len__ to return total items in cart.
 
+class ShoppingCart:
+    
+    def __init__(self, total_items):
+        self.total_items = total_items
+    
+    def __len__(self):
+        return self.total_items
 
+sc1 = ShoppingCart(125)
 
-
+print(len(sc1))
 
 
 # ADVANCED LEVEL (21–30)
