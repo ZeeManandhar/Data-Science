@@ -35,24 +35,104 @@ print(t1)
 
 # 4.) Write a program to create a class Animal and use __str__ to return "Lion Animal" when object is printed.
 
+class Animal:
+    
+    def __str__(self):
+        return "Lion Animal"
+
+a1 = Animal()
+print(a1)
+
+
 # 5.) Write a program to create a class Box and use __len__ to return 5.
+
+class Box:
+    def __len__(self):
+        return 5
+
+b1 = Box()
+print(len(b1))
 
 # 6.) Write a program to create a class Classroom and use __len__ to return total students as 30.
 
+class Classroom:
+    
+    def __len__(self):
+        return 30
+
+c1 = Classroom()
+print(f"Total Students : {len(c1)}")
+
 # 7.) Write a program to create a class Number and overload + operator using __add__ to add two objects.
+
+class Number:
+    
+    def __add__(self, other):
+        add_obj = self.value + other.value
+        return add_obj
+
+n1 = Number()
+n1.value = 50
+
+n2 = Number()
+n2.value = 70
+
+print(n1+n2)
+
 
 # 8.) Write a program to create a class Money and add two money objects using __add__.
 
+class Money:
+    def __add__(self, other):
+        add_obj = self.value + other.value
+        return add_obj
+
+m1 = Money()
+m1.value = 20
+
+m2 = Money()
+m2.value = 30
+
+print(m1+m2)
+
+
 # 9.) Write a program to create a class Marks and subtract two objects using __sub__.
+
+class Marks:
+    def __sub__(self, other):
+        return self.value - other.value
+
+mrk1 = Marks()
+mrk1.value = 82
+
+mrk2 = Marks()
+mrk2.value = 45
+
+print(mrk1 - mrk2)
+
 
 # 10.) Write a program to create a class Item and multiply two objects using __mul__.
 
+class Item:
+    
+    def __mul__(self,other):
+        return self.value * other.value
+
+i1 = Item()
+i1.value = 9
+
+i2 = Item()
+i2.value = 10
+
+print(i1*i2)
 
 
 # INTERMEDIATE LEVEL (11–20)
 
-
 # 11.)  Write a program to create a class Book using __str__ to display book name and __len__ to return total pages.
+
+
+
 
 # 12.)  Write a program to create a class BankAccount and overload + operator to add balances of two accounts.
 
