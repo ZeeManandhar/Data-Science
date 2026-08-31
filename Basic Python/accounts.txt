@@ -1,0 +1,2 @@
+SuloDon,11500
+ZeesonHero1,10000

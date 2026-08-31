@@ -13,12 +13,9 @@ cre = Credentials()
 print(cre.new_password)
 
 
-
 # Constructor:
 # Constructor is a special kind of method in OOP that automatically executes when an object is created
-
 # There is only one constructor and that is __init__ (you have use this __init__everytime).
-
 # The main use of constructor is to create the object attributes
 
 

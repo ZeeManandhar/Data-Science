@@ -6,8 +6,16 @@
 
 # Code:
 
+def my_decorator(func):
+     def inner_function():
+          for i in range(10):
+               func()
+     return inner_function
 
-
+@my_decorator
+def abc() :
+     print("This is Zeeson Manandhar")
+abc()
 
 
 # Static Method
@@ -23,20 +31,22 @@ s1 = Student()
 s1.abc()
 
 
-
 # Abstract Method
 # Abstract Method tells that if a parent class is inherited from ABC and has an abstract method, then any child class that inherits the parent class should have abstract method
 # ABC = Abstract Base Class
 
 from abc import ABC, abstractmethod
 
-class Parent:
+class Parent(ABC):
      name = "parent"
-
+     
+     @abstractmethod
      def abcmethod(self):
           print("This should be a part of every child class")
 
 class Child1(Parent):
-     pass
+     def abcmethod(self):
+          print("Abstract Method called from child class")
+
 c1 = Child1()
 c1.abcmethod()
